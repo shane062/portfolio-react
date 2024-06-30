@@ -1,0 +1,27 @@
+{
+    "projects": [
+      {
+        "title": "Uniflea",
+        "description": "Description for project 1",
+        "card_bg": "/images/project/uniflea/main.png",
+        "avatar" : "/images/project/uniflea/avatar.png",
+        "avatar_fb": "UF",
+        "tech_badge" : ["Vue.js", "Vuetify","Laravel", "MySQL"],
+        "about": "",
+        "images": [],
+        "website": ""
+      },
+      {
+        "title": "PANAISpeak",
+        "description": "Description for project 2",
+        "card_bg": "/images/project/panaispeak/main.png",
+        "avatar" : "/images/project/panaispeak/avatar.png",
+        "avatar_fb": "PS",
+        "tech_badge" : ["Vue.js", "Vuetify", "Laravel", "MongoDB"],
+        "about": "",
+        "images": [],
+        "website": ""
+      }
+    ]
+  }
+  
