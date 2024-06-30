@@ -1,27 +1,73 @@
 {
     "projects": [
-      {
-        "title": "Uniflea",
-        "description": "Description for project 1",
-        "card_bg": "/images/project/uniflea/main.png",
-        "avatar" : "/images/project/uniflea/avatar.png",
-        "avatar_fb": "UF",
-        "tech_badge" : ["Vue.js", "Vuetify","Laravel", "MySQL"],
-        "about": "",
-        "images": [],
-        "website": ""
-      },
-      {
-        "title": "PANAISpeak",
-        "description": "Description for project 2",
-        "card_bg": "/images/project/panaispeak/main.png",
-        "avatar" : "/images/project/panaispeak/avatar.png",
-        "avatar_fb": "PS",
-        "tech_badge" : ["Vue.js", "Vuetify", "Laravel", "MongoDB"],
-        "about": "",
-        "images": [],
-        "website": ""
-      }
+        {
+            "title": "Uniflea",
+            "description": "A web-based flea marketplace application.",
+            "card_bg": "/images/project/uniflea/main.png",
+            "avatar": "/images/project/uniflea/avatar.png",
+            "avatar_fb": "UF",
+            "tech_badge": [
+                "Vue.js",
+                "Vuetify",
+                "Javascript",
+                "Laravel",
+                "MySQL"
+            ],
+            "about": "University Flea Market Web Application(UniFlea) is an web-based University Flea market created specifically for universities. Me and my team, called Sleepy Flea, designed and built the website to address a problem brought up by our client, a third-year undergraduate student who has to move every semester due to a lack of available dorm rooms. She found it difficult to buy and sell everyday essentials and electronics when she has to move. This inspired her to create an online marketplace where university community members could buy and sell used items to facilitate the moving process. UniFlea serves as a marketplace, where students, employees, professors, and lecturers can sell, rent, exchange, and share their items",
+            "images": [
+                "/images/project/uniflea/1.png",
+                "/images/project/uniflea/2.png",
+                "/images/project/uniflea/3.png",
+                "/images/project/uniflea/4.png",
+                "/images/project/uniflea/5.png",
+                "/images/project/uniflea/6.png",
+                "/images/project/uniflea/7.png",
+                "/images/project/uniflea/8.png",
+                "/images/project/uniflea/9.png",
+                "/images/project/uniflea/10.jpg",
+                "/images/project/uniflea/11.png",
+                "/images/project/uniflea/12.png",
+                "/images/project/uniflea/13.png",
+                "/images/project/uniflea/14.png",
+                "/images/project/uniflea/15.png",
+                "/images/project/uniflea/16.png",
+                "/images/project/uniflea/17.png"
+            ],
+            "website": "https://uniflea.azurewebsites.net/",
+            "available": false
+        },
+        {
+            "title": "PANAISpeak",
+            "description": "An educational web application integrating a fine-tuned Whisper model for speech recognition.",
+            "card_bg": "/images/project/panaispeak/main.png",
+            "avatar": "/images/project/panaispeak/avatar.png",
+            "avatar_fb": "PS",
+            "tech_badge": [
+                "Vue.js",
+                "Vuetify",
+                "Typescript",
+                "Laravel",
+                "MongoDB",
+                "AWS Polly",
+                "Hugging Face Inference API"
+            ],
+            "about": "PANAISpeak is the product of my final year project (FYP). This educational web application integrates a fine-tuned Whisper model, which has been specifically fine-tuned with a collected dataset of Malaysian children aged 4 to 7. The goal is to provide an effective learning experience for Malaysian children, enhancing their educational journey through advanced speech recognition technology.",
+            "images": [
+                "/images/project/panaispeak/1.png",
+                "/images/project/panaispeak/2.png",
+                "/images/project/panaispeak/3.png",
+                "/images/project/panaispeak/4.png",
+                "/images/project/panaispeak/5.png",
+                "/images/project/panaispeak/6.png",
+                "/images/project/panaispeak/7.png",
+                "/images/project/panaispeak/8.png",
+                "/images/project/panaispeak/9.png",
+                "/images/project/panaispeak/10.png",
+                "/images/project/panaispeak/11.png",
+                "/images/project/panaispeak/12.png",
+                "/images/project/panaispeak/13.png"
+            ],
+            "website": "https://black-mud-012805500.5.azurestaticapps.net/"
+        }
     ]
-  }
-  
+}
