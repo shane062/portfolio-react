@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge"
 import {
   Dialog,
   DialogContent,
-  DialogFooter,
   DialogTrigger,
 } from "@/components/ui/dialog"
 import {
@@ -20,7 +19,7 @@ import {
 } from "@/components/ui/carousel"
 import { Project } from '@/types/type';
 
-export default function Home() {
+export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
@@ -33,7 +32,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grid grid-cols-12 justify-items-center content-start min-h-[calc(100vh-64px)]">
+    <div className="grid grid-cols-12 justify-items-center content-start min-h-[calc(100vh-160px)]">
 
       <div className="col-span-6 col-start-4 col-end-10 p-2">
         <h1 className="text-2xl font-extrabold tracking-tight lg:text-4xl text-center">/Project(s)</h1>
@@ -43,7 +42,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="col-span-12 grid grid-cols-12 grid-flow-row-dense w-screen justify-items-center p-16 gap-8 sm:p-8">
+      <div className="col-span-12 grid grid-cols-12 grid-flow-row-dense min-w-screen justify-items-center p-16 gap-8 sm:p-8">
         {projects.map((project, index) => (
           <div key={index} className="xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-12 min-w-full">
             <Dialog>
@@ -85,7 +84,7 @@ export default function Home() {
                                       alt={`Project image ${index + 1}`}
                                       width={500}
                                       height={500}
-                                      priority
+                                      priority={true}
                                       quality={100}
                                     />
                                   </div>

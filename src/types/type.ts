@@ -11,4 +11,13 @@ export interface Project {
     website: string;
     available: boolean
   }
+
+export interface Experience {
+  time: string,
+  company: string,
+  title: string,
+  content: string,
+  image: string,
+  tech_badge: string[],
+}
   

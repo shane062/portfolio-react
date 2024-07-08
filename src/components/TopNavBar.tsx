@@ -4,7 +4,7 @@ import React from 'react';
 const TopNavBar = () => {
     return (
 
-        <header className="sticky top-0 flex h-16 justify-end items-center gap-4 border-b bg-background px-4 md:px-6">
+        <header className="sticky top-0 flex h-16 justify-end items-center gap-4 border-b bg-background px-4 md:px-6 z-50 shadow-md">
             <nav className="hidden flex gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
                 {/* <Link
                 href="#"
@@ -20,22 +20,22 @@ const TopNavBar = () => {
                     Home
                 </Link>
                 <Link
-                    href="/project"
+                    href="/projects"
                     className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                     Projects
                 </Link>
                 <Link
-                    href="/achievement"
+                    href="/achievements"
                     className="text-muted-foreground transition-colors hover:text-foreground"
                 >
                     Achievements
                 </Link>
                 <Link
-                    href="#"
+                    href="/experiences"
                     className="text-muted-foreground transition-colors hover:text-foreground"
                 >
-
+                    Experiences
                 </Link>
                 {/* <Link
                 href="#"

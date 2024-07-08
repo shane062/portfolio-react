@@ -69,5 +69,35 @@
             ],
             "website": "https://black-mud-012805500.5.azurestaticapps.net/"
         }
+    ],
+    "experiences": [
+        {
+            "time" : "August - October 2023",
+            "company" : "Datasonic Smart Solution SHD BHD",
+            "title" : "Software Engineer",
+            "content" : "Worked part-time and remotely on the development of the PERKESO (Pertubuhan Keselamatan Sosial) ARTs (Automatic Reporting Tools) platform. Contributed to the user management and automation reporting modules of the platform.",
+            "tech_badge": [
+                "Quasar Framework",
+                "Typescript",
+                ".NET Core",
+                "C#",
+                "MySQL"
+            ]
+        },
+        {
+            "time" : "February - August 2023",
+            "company" : "Datasonic Smart Solution SHD BHD",
+            "title" : "Software Engineer Intern",
+            "content" : "Worked on Immigration Department of Malaysia (Jabatan Imigresen Malaysia)'s i-KAD project, focusing on the development of both frontend and backend components of the i-KAD Printing Management System, i-KAD Issuance, and i-KAD Renewal.",
+            "image" : "/images/experiences/1.jpg",
+            "tech_badge": [
+                "Quasar Framework",
+                "Typescript",
+                ".NET Core",
+                "C#",
+                "MySQL"
+            ]
+        }
+
     ]
 }
