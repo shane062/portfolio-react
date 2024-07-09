@@ -14,6 +14,15 @@ import { useMediaQuery } from '@mui/material';
 
 export default function CustomizedTimeline() {
     const [experiences, setExperiences] = useState<Experience[]>([]);
+    const [zoomedImage, setZoomedImage] = useState(null);
+    // Function to open zoomed image
+    const openZoomedImage = (imageUrl) => {
+        setZoomedImage(imageUrl);
+    };
+    // Function to close zoomed image
+    const closeZoomedImage = () => {
+        setZoomedImage(null);
+    };
 
     useEffect(() => {
         async function fetchProjects() {
@@ -28,15 +37,15 @@ export default function CustomizedTimeline() {
 
     const timelineSx = isSmallScreen ? {
         [`& .${timelineItemClasses.root}:before`]: {
-          flex: 0,
-          padding: 0,
+            flex: 0,
+            padding: 0,
         },
-      } : {};
+    } : {};
 
     return (
         <div className="grid grid-cols-12 justify-items-center content-start min-h-[calc(100vh-160px)]">
-            <div className="col-span-6 col-start-4 col-end-10 p-2">
-                <h1 className="text-2xl font-extrabold tracking-tight lg:text-4xl text-center">/Experience(s)</h1>
+            <div className="col-span-6 col-start-4 col-end-10 p-8">
+                <h1 className="text-2xl font-extrabold tracking-tight lg:text-4xl text-center">_experience(s)</h1>
                 <p className="text-xl text-muted-foreground text-justify leading-tight">
                     A modal dialog that interrupts the user with important content and expects
                     a response.
@@ -44,44 +53,45 @@ export default function CustomizedTimeline() {
             </div>
 
 
-            <div className="col-span-12 xl:w-9/12 lg:w-10/12 md:w-11/12 w-full">
+            <div className="col-span-12 xl:w-9/12 lg:w-10/12 md:w-11/12 w-full p-8 sm:p-4">
                 <Timeline position={isSmallScreen ? "right" : 'alternate'} sx={timelineSx}>
                     {experiences.map((experience, index) => (
                         <TimelineItem key={index}>
                             <TimelineSeparator>
                                 {/* <TimelineConnector /> */}
-                                <TimelineDot color="primary" />
+                                <TimelineDot/>
                                 <TimelineConnector
                                 // sx={{ bgcolor: 'secondary.main' }} 
                                 />
                             </TimelineSeparator>
 
-                            <TimelineContent className="grid grid-cols-12 content-center">
-                                <div className='grid grid-rows-3 col-span-12'>
-                                    <span className='text-2xl font-semibold'>
+                            <TimelineContent className="grid grid-cols-12 content-center mb-8">
+                                <div className='col-span-12'>
+                                    <h3 className='text-2xl font-semibold font-kode-mono text-pretty'>
                                         {experience.company}
-                                    </span>
-                                    <span className='text-xl font-semibold '>
+                                    </h3>
+                                    <h3 className='whitespace-pre-line text-xl font-kode-mono font-semibold text-pretty'>
                                         {experience.time}
-                                    </span>
-                                    <span className='text-xl font-semibold'>
+                                    </h3>
+                                    <h3 className='whitespace-pre-line text-xl font-kode-mono font-semibold text-pretty'>
                                         {experience.title}
-                                    </span>
+                                    </h3>
                                 </div>
 
                                 <Separator className="my-2 col-span-12" />
 
                                 <div className='col-span-12'>
-                                    <p className="text-justify">
+                                    <p className="text-justify font-kode-mono">
                                         {experience.content}
                                     </p>
                                 </div>
 
                                 {experience.image && (
-                                    <div className='col-span-12'>
+                                    <>
+                                    <div className='col-span-12' onClick={() => openZoomedImage(experience.image)}>
                                         <Image
                                             src={experience.image}
-                                            className="object-contain w-full h-full border-4 border-solid border-black"
+                                            className="object-contain w-full h-full border-4 border-solid cursor-zoom-in"
                                             alt={`Experience image ${index + 1}`}
                                             width={500} // Adjust width as needed
                                             height={500} // Adjust height as needed
@@ -89,11 +99,25 @@ export default function CustomizedTimeline() {
                                             quality={100}
                                         />
                                     </div>
+                                     {zoomedImage && (
+                                        <div
+                                          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 cursor-zoom-out z-20"
+                                          onClick={closeZoomedImage}
+                                        >
+                                          <Image
+                                            src={zoomedImage}
+                                            alt="Zoomed experience image"
+                                            layout="fill"
+                                            objectFit="contain"
+                                          />
+                                        </div>
+                                      )}
+                                      </>
                                 )}
 
                                 <div className="col-span-12 mt-2">
                                     {experience.tech_badge.map((tech, index) => (
-                                        <Badge key={index} className="hover:bg-green-400 mx-1">{tech}</Badge>
+                                        <Badge key={index} className="hover:bg-neon-green mx-1 font-kode-mono">{tech}</Badge>
                                     ))}
                                 </div>
                             </TimelineContent>
@@ -104,7 +128,7 @@ export default function CustomizedTimeline() {
                     <TimelineItem>
                         <TimelineSeparator>
                             <TimelineConnector />
-                            <TimelineDot color="primary" />
+                            <TimelineDot/>
 
                         </TimelineSeparator>
 

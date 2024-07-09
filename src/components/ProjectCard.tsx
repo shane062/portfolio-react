@@ -35,7 +35,7 @@ export function ProjectCard({ title, description, card_bg, avatar, avatar_fb, te
                     <span className="text-sm text-black col-span-3 py-1 text-justify">{description}</span>
                     <div className="col-span-3 flex flex-wrap gap-1">
                         {tech_badge.map((tech, index) => (
-                            <Badge key={index} className="hover:bg-green-400">{tech}</Badge>
+                            <Badge key={index} className="hover:bg-neon-green">{tech}</Badge>
                         ))}
                     </div>
                 </div>

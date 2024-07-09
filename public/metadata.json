@@ -99,5 +99,40 @@
             ]
         }
 
+    ],
+    "achievements" : [
+        {
+            "title" : "NASA Space Apps Sarawak 2023 Hackathon Senior Category Champion",
+            "content" :"<div><p>My team, MakeItReal, and I proudly participated in the NASA Space Apps Sarawak 2023 Hackathon organized by the Ministry of Education, Innovation and Talent Development (MEITD). It was launched on Friday, 6 October, at 8.30pm. The event commenced at 9pm the same day and continued non-stop until 9pm on Sunday, October 8. For this hackathon, we selected the challenge 'A Marketplace for Open Science Projects.' To meet the objectives of this challenge, we developed the OPENHUB web application. OPENHUB serves as a platform to connect researchers, developers, and enthusiasts, enabling them to collaborate on open science projects effectively. <br><br> Team Details: <a href=\"https://www.spaceappschallenge.org/2023/find-a-team/makeitreal/\" target=\"_blank\"  style=\"color: blue;\" rel=\"noopener noreferrer\">MakeItReal</a></p></div>",
+            "images" : ["/images/achievements/1.jpg","/images/achievements/2.jpg","/images/achievements/3.jpg"],
+            "isRecognition" : true,
+            "recognitions" : [
+                {
+                    "title": "The Borneo Post - News",
+                    "link": "https://www.theborneopost.com/2023/10/21/smk-bintulu-unimas-overall-champions-for-nasa-space-apps-sarawak-hackathon/"
+                },
+                {
+                    "title": "Space Apps Sarawak - Facebook Post",
+                    "link": "https://www.facebook.com/SpaceAppsSarawak/posts/lets-celebrate-the-winners-of-nasa-spaceapps-sarawak-2023-senior-category-champi/643863287950833/"
+                },
+                {
+                    "title": "Dayak Daily - News",
+                    "link": "https://dayakdaily.com/team-makeitreal-wins-senior-category-in-nasa-space-apps-sarawak-2023/"
+                }
+            ]
+        },
+        {
+            "title" : "King's Scout Award",
+            "content" : "",
+            "images" : ["/images/achievements/4.jpg","/images/achievements/5.jpg","/images/achievements/6.jpg"],
+            "isRecognition" : false
+        },
+        {
+            "title" : "Kangaroo Math Competition (KMC)",
+            "content" : "",
+            "images" : ["/images/achievements/7.jpg"],
+            "isRecognition" : false
+        }
+        
     ]
 }

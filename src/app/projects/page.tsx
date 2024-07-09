@@ -34,8 +34,8 @@ export default function Projects() {
   return (
     <div className="grid grid-cols-12 justify-items-center content-start min-h-[calc(100vh-160px)]">
 
-      <div className="col-span-6 col-start-4 col-end-10 p-2">
-        <h1 className="text-2xl font-extrabold tracking-tight lg:text-4xl text-center">/Project(s)</h1>
+      <div className="col-span-6 col-start-4 col-end-10 p-8">
+        <h1 className="text-2xl font-extrabold tracking-tight lg:text-4xl text-center">_project(s)</h1>
         <p className="text-xl text-muted-foreground text-justify leading-tight">
           A modal dialog that interrupts the user with important content and expects
           a response.
@@ -47,7 +47,6 @@ export default function Projects() {
           <div key={index} className="xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-12 min-w-full">
             <Dialog>
               <DialogTrigger asChild>
-
                 <div>
                   <ProjectCard className="place-self-center"
                     title={project.title}
@@ -57,7 +56,6 @@ export default function Projects() {
                     avatar_fb={project.avatar_fb}
                     tech_badge={project.tech_badge} />
                 </div>
-
               </DialogTrigger>
               <DialogContent className="overflow-y-auto max-h-[calc(100vh-16px)] lg:max-w-[60vw] md:max-w-[65vw] sm:max-w-[70vw]">
                 <div className="grid grid-cols-12 gap-4 py-4">
@@ -110,7 +108,7 @@ export default function Projects() {
                     <span className='text-2xl font-extrabold'>Technologies</span>
                     <span className=" flex flex-wrap gap-1">
                       {project.tech_badge.map((tech, index) => (
-                        <Badge key={index} className="hover:bg-green-400">{tech}</Badge>
+                        <Badge key={index} className="hover:bg-neon-green">{tech}</Badge>
                       ))}
                     </span>
                   </div>

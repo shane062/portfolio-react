@@ -20,4 +20,17 @@ export interface Experience {
   image: string,
   tech_badge: string[],
 }
+
+export interface Achievement {
+  title: string,
+  content: string,
+  images: string[],
+  isRecognition: boolean,
+  recognitions: Recognition[]
+}
+
+export interface Recognition {
+  title: string,
+  link: string
+}
   
