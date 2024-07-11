@@ -1,6 +1,5 @@
 "use client";
 import * as React from "react"
-import { useEffect, useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image";
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
@@ -26,7 +25,6 @@ export function AchievementCarousel({ title, content, images, isRecognition, rec
         if (!api) {
             return
         }
-
         setCurrent(api.selectedScrollSnap())
 
         api.on("select", () => {

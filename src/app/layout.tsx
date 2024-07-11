@@ -6,7 +6,9 @@ import { Footer } from '../components/Footer'
 import { ThemeProvider } from "@/components/theme-provider"
 
 const kode_mono = Kode_Mono({
-  subsets: ["latin"]});
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Portfolio - Lai Weng Hong",
@@ -27,10 +29,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TopNavBar />
-          <main className="min-h-[calc(100vh-160px)]">
+          <main className="">
             {children}
           </main>
-          <Footer />
+          <Footer/>
         </ThemeProvider>
       </body>
     </html>

@@ -9,7 +9,8 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselPrevious,
-  CarouselNext
+  CarouselNext,
+  type CarouselApi,
 } from "@/components/ui/carousel"
 import {
   Dialog,
@@ -17,9 +18,17 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { Achievement } from '@/types/type';
 import { AchievementCarousel } from "@/components/AchievementCarousel";
 import { title } from "process";
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
 
 export default function Achievements() {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
@@ -33,49 +42,64 @@ export default function Achievements() {
     fetchAchievements();
   }, []);
 
-  return (
-    <div className="grid grid-cols-12 justify-items-center content-start min-h-[calc(100vh-160px)]">
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
 
-      <div className="col-span-6 col-start-4 col-end-10 p-8">
-        <h1 className="text-2xl font-extrabold tracking-tight lg:text-4xl text-center">_achievement(s)</h1>
-        <p className="text-xl text-muted-foreground text-justify leading-tight">
-          A modal dialog that interrupts the user with important content and expects
-          a response.
+  React.useEffect(() => {
+    if (!api) {
+        return
+    }
+    setCurrent(api.selectedScrollSnap())
+
+    api.on("select", () => {
+        setCurrent(api.selectedScrollSnap())
+    })
+}, [api])
+
+
+  return (
+    <div className="grid grid-cols-12 justify-items-center content-start min-h-[calc(100vh-161px)] sm:px-8 py-4 ">
+      <div className="col-span-10 col-start-2 col-end-12 p-8 lg:col-span-6 lg:col-start-4 lg:col-end-10 md:col-span-8 md:col-start-3 md:col-end-11 p-8">
+        <h1 className="text-balance font-extrabold tracking-tight lg:text-4xl md:text-3xl sm:text-2xl xs:text-lg text-md text-center">_achievement(s)</h1>
+        <p className="text-balance lg:text-lg md:text-md sm:text-sm text-xs text-muted-foreground text-justify leading-tight">
+          Highlighted accomplishments I've received.
         </p>
       </div>
 
-      <div className="col-span-12 grid grid-cols-12 grid-flow-row-dense min-w-screen justify-items-center p-16 gap-8 sm:p-8">
+      <div className="col-span-12 grid grid-cols-12 grid-flow-row-dense min-w-screen justify-items-center gap-4 sm:gap-8 sm:p-4">
         {achievements.map((achievement, index) => (
-          <div key={index} className="xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-12 min-w-full w-full">
+          <div key={index} className="xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-12 min-w-full col-start-2">
             <Dialog>
               <DialogTrigger asChild>
                 <div className="cursor-pointer relative">
-                  <AchievementCarousel
-                    key={index}
-                    title={achievement.title}
-                    content={achievement.content}
-                    images={achievement.images}
-                    isRecognition={achievement.isRecognition}
-                    recognitions={achievement.recognitions}
-                  />
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        <AchievementCarousel
+                          key={index}
+                          title={achievement.title}
+                          content={achievement.content}
+                          images={achievement.images}
+                          isRecognition={achievement.isRecognition}
+                          recognitions={achievement.recognitions}
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{achievement.title}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+
                 </div>
 
               </DialogTrigger>
 
               <DialogContent className="overflow-y-auto max-h-[calc(100vh-16px)] lg:max-w-[60vw] md:max-w-[65vw] sm:max-w-[70vw]">
-                <DialogTitle className='text-2xl font-extrabold'>{achievement.title}</DialogTitle>
+                <DialogTitle className='text-balance text-2xl font-extrabold'>{achievement.title}</DialogTitle>
                 <div className="grid grid-cols-12 gap-4 py-4">
-                  {/* <div className='grid col-span-12'>
-
-                    <span className='text-2xl font-extrabold'>{achievement.title}</span>
-                    <span className="text-sm text-muted-foreground">
-                      {achievement.content}
-                    </span>
-                  </div> */}
-
                   {/* Images */}
-                  <div className='flex col-span-12 justify-center'>
-                    <Carousel className="max-w-sm">
+                  <div className='relative flex col-span-12 justify-center'>
+                    <Carousel className="max-w-sm" setApi={setApi}>
                       <CarouselContent>
                         {achievement.images.map((image, index) => (
                           <CarouselItem key={index}>
@@ -102,26 +126,37 @@ export default function Achievements() {
                       <CarouselPrevious />
                       <CarouselNext />
                     </Carousel>
+                    <div className="absolute inset-x-0 bottom-0 flex justify-center align-center mb-4">
+                {achievement.images.map((_, index) => (
+                    <>
+                        {index === current ? (
+                            <FiberManualRecordIcon className="{w-3 h-3 rounded-full " />
+                        ) : (
+                            <FiberManualRecordOutlinedIcon className="{w-3 h-3 rounded-full " />
+                        )}
+                    </>
+                ))}
+            </div>
                   </div>
 
                   <div className='grid col-span-12'>
-                    <span className='text-2xl font-extrabold'>About</span>
-                    <span className="text-sm text-muted-foreground text-justify" dangerouslySetInnerHTML={{ __html: achievement.content }} />
+                    <span className='text-balance text-2xl font-extrabold'>About</span>
+                    <span className="text-balance text-sm text-muted-foreground text-justify" dangerouslySetInnerHTML={{ __html: achievement.content }} />
                   </div>
 
                   {achievement.isRecognition && (
                     <div className='grid col-span-12'>
-                      <span className='text-2xl font-extrabold'>Recognition</span>
+                      <span className='text-balance text-2xl font-extrabold'>Recognition</span>
                       <div>
                         {achievement.recognitions.map((recognition, index) => (
-                        <Link
-                          className="text-sm text-muted-foreground text-justify block"
-                          href={recognition.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          <Link
+                            className="text-balance text-sm text-muted-foreground text-justify block text-blue-700 underline py-1"
+                            href={recognition.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
-                          {recognition.title}
-                        </Link>
+                            {recognition.title}
+                          </Link>
                         ))}
                       </div>
                     </div>

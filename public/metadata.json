@@ -72,10 +72,10 @@
     ],
     "experiences": [
         {
-            "time" : "August - October 2023",
-            "company" : "Datasonic Smart Solution SHD BHD",
-            "title" : "Software Engineer",
-            "content" : "Worked part-time and remotely on the development of the PERKESO (Pertubuhan Keselamatan Sosial) ARTs (Automatic Reporting Tools) platform. Contributed to the user management and automation reporting modules of the platform.",
+            "time": "August - October 2023",
+            "company": "Datasonic Smart Solution SHD BHD",
+            "title": "Software Engineer",
+            "content": "Worked part-time and remotely on the development of the PERKESO (Pertubuhan Keselamatan Sosial) ARTs (Automatic Reporting Tools) platform. Contributed to the user management and automation reporting modules of the platform.",
             "tech_badge": [
                 "Quasar Framework",
                 "Typescript",
@@ -85,11 +85,11 @@
             ]
         },
         {
-            "time" : "February - August 2023",
-            "company" : "Datasonic Smart Solution SHD BHD",
-            "title" : "Software Engineer Intern",
-            "content" : "Worked on Immigration Department of Malaysia (Jabatan Imigresen Malaysia)'s i-KAD project, focusing on the development of both frontend and backend components of the i-KAD Printing Management System, i-KAD Issuance, and i-KAD Renewal.",
-            "image" : "/images/experiences/1.jpg",
+            "time": "February - August 2023",
+            "company": "Datasonic Smart Solution SHD BHD",
+            "title": "Software Engineer Intern",
+            "content": "Worked on Immigration Department of Malaysia (Jabatan Imigresen Malaysia)'s i-KAD project, focusing on the development of both frontend and backend components of the i-KAD Printing Management System, i-KAD Issuance, and i-KAD Renewal.",
+            "image": "/images/experiences/1.jpg",
             "tech_badge": [
                 "Quasar Framework",
                 "Typescript",
@@ -98,15 +98,18 @@
                 "MySQL"
             ]
         }
-
     ],
-    "achievements" : [
+    "achievements": [
         {
-            "title" : "NASA Space Apps Sarawak 2023 Hackathon Senior Category Champion",
-            "content" :"<div><p>My team, MakeItReal, and I proudly participated in the NASA Space Apps Sarawak 2023 Hackathon organized by the Ministry of Education, Innovation and Talent Development (MEITD). It was launched on Friday, 6 October, at 8.30pm. The event commenced at 9pm the same day and continued non-stop until 9pm on Sunday, October 8. For this hackathon, we selected the challenge 'A Marketplace for Open Science Projects.' To meet the objectives of this challenge, we developed the OPENHUB web application. OPENHUB serves as a platform to connect researchers, developers, and enthusiasts, enabling them to collaborate on open science projects effectively. <br><br> Team Details: <a href=\"https://www.spaceappschallenge.org/2023/find-a-team/makeitreal/\" target=\"_blank\"  style=\"color: blue;\" rel=\"noopener noreferrer\">MakeItReal</a></p></div>",
-            "images" : ["/images/achievements/1.jpg","/images/achievements/2.jpg","/images/achievements/3.jpg"],
-            "isRecognition" : true,
-            "recognitions" : [
+            "title": "Senior Category Champion • Global Nominee - NASA Space Apps Sarawak 2023 Hackathon",
+            "content": "<div><p>My team, MakeItReal, and I proudly participated in the NASA Space Apps Sarawak 2023 Hackathon organized by the Ministry of Education, Innovation and Talent Development (MEITD). It was launched on Friday, 6 October, at 8.30pm. The event commenced at 9pm the same day and continued non-stop until 9pm on Sunday, October 8. For this hackathon, we selected the challenge 'A Marketplace for Open Science Projects.' To meet the objectives of this challenge, we developed the OPENHUB web application. OPENHUB serves as a platform to connect researchers, developers, and enthusiasts, enabling them to collaborate on open science projects effectively. <br><br> Team Details: <a href=\"https://www.spaceappschallenge.org/2023/find-a-team/makeitreal/\" target=\"_blank\"  class=\"text-blue-700 underline\" rel=\"noopener noreferrer\">MakeItReal</a></p></div>",
+            "images": [
+                "/images/achievements/1.jpg",
+                "/images/achievements/2.jpg",
+                "/images/achievements/3.jpg"
+            ],
+            "isRecognition": true,
+            "recognitions": [
                 {
                     "title": "The Borneo Post - News",
                     "link": "https://www.theborneopost.com/2023/10/21/smk-bintulu-unimas-overall-champions-for-nasa-space-apps-sarawak-hackathon/"
@@ -122,17 +125,28 @@
             ]
         },
         {
-            "title" : "King's Scout Award",
-            "content" : "",
-            "images" : ["/images/achievements/4.jpg","/images/achievements/5.jpg","/images/achievements/6.jpg"],
-            "isRecognition" : false
+            "title": "King's Scout Award",
+            "content": "<div><p>The King's Scout Award is the highest award of the Scouts Association of Malaysia (PPM). I was honored to receive this prestigious award, issued by the Scouts Association of Malaysia on 4th May 2019. The certificate is signed by His Majesty the Yang di-Pertuan Agong of Malaysia and all the sultans in Malaysia. To earn this award, I successfully completed the King's Scout Rating Test Camp (King's Scout Assessment Camp) from 20 July 2017 to 22 July 2017, a rigorous 4-day, 3-night camp organized by the respective State King's Scout Evaluation Council.</p></div>",
+            "images": [
+                "/images/achievements/4.jpg",
+                "/images/achievements/5.jpg",
+                "/images/achievements/6.jpg"
+            ],
+            "isRecognition": true,
+            "recognitions": [
+                {
+                    "title": "List of 2017 King's Scouts",
+                    "link": "https://www.pengakapperak.org.my/pengakap-raja-2017/"
+                }
+            ]
         },
         {
-            "title" : "Kangaroo Math Competition (KMC)",
-            "content" : "",
-            "images" : ["/images/achievements/7.jpg"],
-            "isRecognition" : false
+            "title": "Bronze Medal - Kangaroo Math Competition (KMC)",
+            "content": "<div><p>I participated in the Kangaroo Math Competition (KMC) on 14th March 2019, a renowned international math competition. The competition ranks the top 10% of participants in each category as MEDALISTS, awarding Gold, Silver, and Bronze medals. I was honored to be among the top participants and to have achieved recognition in this prestigious event.</p></div>",
+            "images": [
+                "/images/achievements/7.jpg"
+            ],
+            "isRecognition": false
         }
-        
     ]
 }
