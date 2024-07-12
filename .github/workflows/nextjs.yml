@@ -3,7 +3,7 @@ name: Deploy Next.js site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this if your default branch is not 'main'
+      - main
   workflow_dispatch:
 
 permissions:
@@ -26,7 +26,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # Use a compatible Node.js version
+          node-version: '18.x'  # Use a compatible Node.js version
 
       - name: Install dependencies
         run: npm install
@@ -40,4 +40,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           cname: portfolio-react.github.io  # Optional: If you have a custom domain
-
