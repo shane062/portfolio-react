@@ -1,13 +1,12 @@
 import Image from "next/image";
 
-
 export default function Home() {
   return (
     <div className="grid grid-cols-12 gap-4 content-center min-h-[calc(100vh-160px)] md:p-0 p-8">
       <div className="col-span-12 text-justify content-center md:col-span-4 md:col-end-7 mb-4 md:mb-0 mr-8">
         <h1 className="text-2xl font-extrabold tracking-tight lg:text-5xl md:text-4xl sm:text-4xl">Hello, <br />I'm Lai Weng Hong</h1>
         <p className="text-md text-muted-foreground md:text-xl sm:text-lg">
-         A fresh graduate from Universiti Malaysia Sarawak (UNIMAS) with a passion for full-stack development.
+        A fresh graduate from Universiti Malaysia Sarawak (UNIMAS) with a Bachelor of Computer Science with Honours (Software Engineering) and a passion for full-stack development.
         </p>
       </div>
 
@@ -29,10 +28,6 @@ export default function Home() {
           <div className="absolute inset-0 border-4 border-neon-yellow rounded-lg -translate-x-6 -translate-y-6 transition-transform duration-300 ease-in-out group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
         </div>
       </div>
-
-
-
-
     </div>
   );
 }

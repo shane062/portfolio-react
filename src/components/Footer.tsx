@@ -9,22 +9,22 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { siteConfig } from '@/config/profile';
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
         <div>
-
             <footer className="py-6 md:py-0">
                 <Separator />
                 <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
                     <div className="flex flex-col">
                         <p className="text-balance text-center text-xs md:text-sm leading-loose text-muted-foreground md:text-left">
-                            © {currentYear} Lai Weng Hong. All rights reserved.
+                            © {currentYear} {siteConfig.author}. All rights reserved.
                         </p>
                         <p className="text-balance text-center md:text-[10px] text-[0px] leading-loose text-muted-foreground md:text-left">
-                        This portfolio is built with React, shadcn/ui, MUI, and Tailwind CSS.
+                            This portfolio is built with React, Next.js, shadcn/ui, MUI, and Tailwind CSS.
                         </p>
                     </div>
                     <div className="flex items-center gap-2">
@@ -32,8 +32,10 @@ export function Footer() {
                             <Tooltip>
                                 <TooltipTrigger>
                                     <Link
-                                        href="https://github.com/shane062"
+                                        href={siteConfig.links.github}
                                         className="text-muted-foreground transition-colors hover:text-foreground"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                     >
                                         <GitHubIcon />
                                     </Link>
@@ -48,8 +50,10 @@ export function Footer() {
                             <Tooltip>
                                 <TooltipTrigger>
                                     <Link
-                                        href="https://www.linkedin.com/in/weng-hong-lai-a02769256/"
+                                        href={siteConfig.links.linkedin}
                                         className="text-muted-foreground transition-colors hover:text-foreground"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                     >
                                         <LinkedInIcon />
                                     </Link>
@@ -64,8 +68,10 @@ export function Footer() {
                             <Tooltip>
                                 <TooltipTrigger>
                                     <Link
-                                        href="mailto:shanelai.dev@gmail.com"
+                                        href={siteConfig.links.mail}
                                         className="text-muted-foreground transition-colors hover:text-foreground"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                     >
                                         <EmailIcon />
                                     </Link>

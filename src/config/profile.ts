@@ -1,12 +1,12 @@
 export const siteConfig = {
-    name: "shadcn/ui",
-    url: "https://ui.shadcn.com",
-    ogImage: "https://ui.shadcn.com/og.jpg",
-    description:
+    author: "Lai Weng Hong",
+    appName: "Portfolio - Lai Weng Hong",
+    appDesc:
       "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
     links: {
-      twitter: "https://twitter.com/shadcn",
-      github: "https://github.com/shadcn-ui/ui",
+      linkedin: "https://www.linkedin.com/in/weng-hong-lai-a02769256/",
+      github: "https://github.com/shane062",
+      mail: "mailto:shanelai.dev@gmail.com"
     },
   }
   
