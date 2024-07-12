@@ -2,19 +2,34 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./src/app/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
   ],
   prefix: "",
   theme: {
+    screens: {
+      "xxs": { min: "340px"},
+      "xs": { min: "480px"},
+      // => @media (min-width: 480px and max-width: 639px) { ... }
+      sm: { min: "640px"},
+      // => @media (min-width: 640px and max-width: 767px) { ... }
+
+      md: { min: "768px"},
+      // => @media (min-width: 768px and max-width: 1023px) { ... }
+
+      lg: { min: "1024px"},
+      // => @media (min-width: 1024px and max-width: 1279px) { ... }
+
+      xl: { min: "1280px"},
+      // => @media (min-width: 1280px and max-width: 1535px) { ... }
+
+      "2xl": { min: "1536px" },
+      // => @media (min-width: 1536px) { ... }
+    },
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
     },
     extend: {
       colors: {
@@ -51,6 +66,12 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "neon-green": "#39FF14",
+        "neon-yellow": "#FFFF33",
+        "neon-pink": "#FF69B4",
+        "neon-red": "#FF073A",
+        "neon-blue": "#00FFFF",
+        "neon-purple": "#9400D3",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -74,4 +95,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

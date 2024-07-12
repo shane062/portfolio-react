@@ -1,95 +1,33 @@
 import Image from "next/image";
-import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+    <div className="grid grid-cols-12 gap-4 content-center min-h-[calc(100vh-160px)] md:p-0 p-8">
+      <div className="col-span-12 text-justify content-center md:col-span-4 md:col-end-7 mb-4 md:mb-0 mr-8">
+        <h1 className="text-2xl font-extrabold tracking-tight lg:text-5xl md:text-4xl sm:text-4xl">Hello, <br />I'm Lai Weng Hong</h1>
+        <p className="text-md text-muted-foreground md:text-xl sm:text-lg">
+        A fresh graduate from Universiti Malaysia Sarawak (UNIMAS) with a Bachelor of Computer Science with Honours (Software Engineering) and a passion for full-stack development.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      </div>
+
+      <div className="relative flex col-span-8 justify-center items-center md:col-span-4 col-start-3 md:col-start-7 group mb-8 md:mb-0">
+        {/* Background Box */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-800 via-blue-600 to-teal-400 rounded-lg transform translate-x-6 translate-y-6 -z-10 transition-transform duration-300 ease-in-out group-hover:translate-x-2 group-hover:translate-y-2"></div>
+
+        <div className="rounded-lg relative">
+          <Image
+            src="/images/lai-weng-hong.png"
+            alt="Lai Weng Hong Profile Picture"
+            className="bg-neon-pink rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-110"
+            width={375}
+            height={375}
+            priority={true}
+            quality={100}
+          />
+          {/* Foreground Box */}
+          <div className="absolute inset-0 border-4 border-neon-yellow rounded-lg -translate-x-6 -translate-y-6 transition-transform duration-300 ease-in-out group-hover:-translate-x-2 group-hover:-translate-y-2"></div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
