@@ -89,7 +89,7 @@
             "company": "Datasonic Smart Solution SHD BHD",
             "title": "Software Engineer Intern",
             "content": "Worked on Immigration Department of Malaysia (Jabatan Imigresen Malaysia)'s i-KAD project, focusing on the development of both frontend and backend components of the i-KAD Printing Management System, i-KAD Issuance, and i-KAD Renewal.",
-            "image": "/images/experiences/1.jpg",
+            "image": "/portfolio-react/images/experiences/1.jpg",
             "tech_badge": [
                 "Quasar Framework",
                 "Typescript",

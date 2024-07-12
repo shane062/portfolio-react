@@ -27,8 +27,7 @@ export default function RootLayout({
         <div className="hidden xxs:block">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem={true}
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <TopNavBar/>
