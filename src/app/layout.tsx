@@ -13,7 +13,7 @@ const kodeMono  = Kode_Mono({
 export const metadata: Metadata = {
   title: "Portfolio - Lai Weng Hong",
   description: "Welcome to the portfolio of Lai Weng Hong, showcasing projects and experiences in web development and software engineering.",
-  authors: [{url:"https://www.linkedin.com/in/weng-hong-lai-a02769256/", name:"Lai Weng Hong"}],
+  // authors: [{url:"https://www.linkedin.com/in/weng-hong-lai-a02769256/", name:"Lai Weng Hong"}],
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          enableSystem
+          enableSystem={true}
           disableTransitionOnChange
         >
           <TopNavBar/>
