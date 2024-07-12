@@ -23,7 +23,6 @@ const TopNavBar = () => {
     const router = useRouter()
 
     return (
-
         <header className="sticky top-0 flex h-16 justify-end items-center gap-4 border-b bg-background px-4 md:px-6 z-10 shadow-md">
             <nav className="hidden gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
                 <Link
@@ -52,14 +51,16 @@ const TopNavBar = () => {
                 </Link>
                 <TooltipProvider>
                     <Tooltip>
-                        <TooltipTrigger>
+                        <TooltipTrigger asChild>
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
+                                <span>
                                     <Button variant="outline" size="icon">
                                         <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                                         <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                                         <span className="sr-only">Toggle theme</span>
                                     </Button>
+                                    </span>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end">
                                     <DropdownMenuItem onClick={() => setTheme("light")}>

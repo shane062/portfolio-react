@@ -32,7 +32,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TopNavBar/>
-          <main  className="hidden xxs:flex">
+          <main className="hidden xxs:block">
             {children}
           </main>
           <Footer/>

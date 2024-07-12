@@ -58,7 +58,7 @@ export default function Achievements() {
 
 
   return (
-    <div className="grid grid-cols-12 justify-items-center content-start min-h-[calc(100vh-161px)] sm:px-8 py-4 ">
+    <div className="grid grid-cols-12 justify-items-center min-h-[calc(100vh-161px)] sm:px-8 py-4">
       <div className="col-span-10 col-start-2 col-end-12 p-8 lg:col-span-6 lg:col-start-4 lg:col-end-10 md:col-span-8 md:col-start-3 md:col-end-11 p-8">
         <h1 className="text-balance font-extrabold tracking-tight lg:text-4xl md:text-3xl sm:text-2xl xs:text-lg text-md text-center">_achievement(s)</h1>
         <p className="text-balance lg:text-lg md:text-md sm:text-sm text-xs text-muted-foreground text-justify leading-tight">
@@ -66,7 +66,7 @@ export default function Achievements() {
         </p>
       </div>
 
-      <div className="col-span-12 grid grid-cols-12 grid-flow-row-dense min-w-screen justify-items-center gap-4 sm:gap-8 sm:p-4">
+      <div className="col-span-12 grid grid-cols-12 grid-flow-row-dense justify-items-center gap-4 sm:gap-8 sm:p-4">
         {achievements.map((achievement, index) => (
           <div key={index} className="xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-12 min-w-full col-start-2">
             <Dialog>
@@ -94,8 +94,8 @@ export default function Achievements() {
 
               </DialogTrigger>
 
-              <DialogContent className="overflow-y-auto max-h-[calc(100vh-16px)] lg:max-w-[60vw] md:max-w-[65vw] sm:max-w-[70vw]">
-                <DialogTitle className='text-balance text-2xl font-extrabold'>{achievement.title}</DialogTitle>
+              <DialogContent className="overflow-y-auto max-h-screen lg:max-w-[60vw] md:max-w-[65vw] sm:max-w-[70vw]  sm:min-h-[calc(100vh-10vh)]">
+                <DialogTitle className='text-balance sm:text-2xl font-extrabold'>{achievement.title}</DialogTitle>
                 <div className="grid grid-cols-12 gap-4 py-4">
                   {/* Images */}
                   <div className='relative flex col-span-12 justify-center'>
@@ -123,8 +123,8 @@ export default function Achievements() {
                           </CarouselItem>
                         ))}
                       </CarouselContent>
-                      <CarouselPrevious />
-                      <CarouselNext />
+                      <CarouselPrevious className='hidden xs:flex'/>
+                      <CarouselNext className='hidden xs:flex'/>
                     </Carousel>
                     <div className="absolute inset-x-0 bottom-0 flex justify-center align-center mb-4">
                 {achievement.images.map((_, index) => (
@@ -140,17 +140,17 @@ export default function Achievements() {
                   </div>
 
                   <div className='grid col-span-12'>
-                    <span className='text-balance text-2xl font-extrabold'>About</span>
-                    <span className="text-balance text-sm text-muted-foreground text-justify" dangerouslySetInnerHTML={{ __html: achievement.content }} />
+                    <span className='text-balance text-xl sm:text-2xl font-extrabold'>About</span>
+                    <span className="text-balance text-xs sm:text-sm text-muted-foreground text-justify" dangerouslySetInnerHTML={{ __html: achievement.content }} />
                   </div>
 
                   {achievement.isRecognition && (
                     <div className='grid col-span-12'>
-                      <span className='text-balance text-2xl font-extrabold'>Recognition</span>
+                      <span className='text-balance text-xl sm:text-2xl font-extrabold'>Recognition</span>
                       <div>
                         {achievement.recognitions.map((recognition, index) => (
                           <Link
-                            className="text-balance text-sm text-muted-foreground text-justify block text-blue-700 underline py-1"
+                            className="text-balance text-xs sm:text-sm text-muted-foreground text-justify block text-blue-700 underline py-1"
                             href={recognition.link}
                             target="_blank"
                             rel="noopener noreferrer"

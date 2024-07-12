@@ -64,12 +64,11 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="col-span-12 grid grid-cols-12 grid-flow-row-dense min-w-screen justify-items-center gap-4 sm:gap-8 sm:p-4">
+      <div className="col-span-12 grid grid-cols-12 grid-flow-col place-items-stretch min-w-ft gap-4 sm:gap-8 sm:p-4">
         {projects.map((project, index) => (
-          <div key={index} className="xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-10 min-w-full col-start-2">
+          <div key={index} className="grid grid0cols-12 xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-10 col-start-2">
             <Dialog>
-              <DialogTrigger asChild>
-                <div>
+              <DialogTrigger className="grid place-items-stretch">
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger>
@@ -86,11 +85,9 @@ export default function Projects() {
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
-
-                </div>
               </DialogTrigger>
-              <DialogContent className="overflow-y-auto max-h-[calc(100vh-16px)] lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] xs:max-w-[90vw] max-w-[100vw]">
-                <div className="grid grid-cols-12 gap-4 py-4">
+              <DialogContent className="overflow-y-auto max-h-screen lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] xs:max-w-[90vw] max-w-[100vw] py-4">
+                <div className="grid grid-cols-12 gap-4 ">
                   <div className='grid col-span-12'>
                     <span className='text-balance text-xl sm:text-2xl font-extrabold'>{project.title}</span>
                     <span className="text-balance text-xs sm:text-sm text-muted-foreground">
