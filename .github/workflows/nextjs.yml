@@ -32,8 +32,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build and export Next.js application
+      - name: Build Next.js application
         run: npm run build
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Deploy to GitHub Pages
         env:
