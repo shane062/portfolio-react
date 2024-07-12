@@ -34,7 +34,7 @@ export default function Projects() {
 
   useEffect(() => {
     async function fetchProjects() {
-      const response = await fetch("/metadata.json");
+      const response = await fetch("/portfolio-react/metadata.json");
       const data = await response.json();
       setProjects(data.projects);
     }

@@ -35,7 +35,7 @@ export default function Achievements() {
 
   useEffect(() => {
     async function fetchAchievements() {
-      const response = await fetch("/metadata.json");
+      const response = await fetch("/portfolio-react/metadata.json");
       const data = await response.json();
       setAchievements(data.achievements);
     }
