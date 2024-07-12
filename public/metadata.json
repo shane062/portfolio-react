@@ -3,8 +3,8 @@
         {
             "title": "Uniflea",
             "description": "A web-based flea marketplace application.",
-            "card_bg": "/images/project/uniflea/main.png",
-            "avatar": "/images/project/uniflea/avatar.png",
+            "card_bg": "/portfolio-react/images/project/uniflea/main.png",
+            "avatar": "/portfolio-react/images/project/uniflea/avatar.png",
             "avatar_fb": "UF",
             "tech_badge": [
                 "Vue.js",
@@ -15,23 +15,23 @@
             ],
             "about": "University Flea Market Web Application(UniFlea) is an web-based University Flea market created specifically for universities. Me and my team, called Sleepy Flea, designed and built the website to address a problem brought up by our client, a third-year undergraduate student who has to move every semester due to a lack of available dorm rooms. She found it difficult to buy and sell everyday essentials and electronics when she has to move. This inspired her to create an online marketplace where university community members could buy and sell used items to facilitate the moving process. UniFlea serves as a marketplace, where students, employees, professors, and lecturers can sell, rent, exchange, and share their items",
             "images": [
-                "/images/project/uniflea/1.png",
-                "/images/project/uniflea/2.png",
-                "/images/project/uniflea/3.png",
-                "/images/project/uniflea/4.png",
-                "/images/project/uniflea/5.png",
-                "/images/project/uniflea/6.png",
-                "/images/project/uniflea/7.png",
-                "/images/project/uniflea/8.png",
-                "/images/project/uniflea/9.png",
-                "/images/project/uniflea/10.jpg",
-                "/images/project/uniflea/11.png",
-                "/images/project/uniflea/12.png",
-                "/images/project/uniflea/13.png",
-                "/images/project/uniflea/14.png",
-                "/images/project/uniflea/15.png",
-                "/images/project/uniflea/16.png",
-                "/images/project/uniflea/17.png"
+                "/portfolio-react/images/project/uniflea/1.png",
+                "/portfolio-react/images/project/uniflea/2.png",
+                "/portfolio-react/images/project/uniflea/3.png",
+                "/portfolio-react/images/project/uniflea/4.png",
+                "/portfolio-react/images/project/uniflea/5.png",
+                "/portfolio-react/images/project/uniflea/6.png",
+                "/portfolio-react/images/project/uniflea/7.png",
+                "/portfolio-react/images/project/uniflea/8.png",
+                "/portfolio-react/images/project/uniflea/9.png",
+                "/portfolio-react/images/project/uniflea/10.jpg",
+                "/portfolio-react/images/project/uniflea/11.png",
+                "/portfolio-react/images/project/uniflea/12.png",
+                "/portfolio-react/images/project/uniflea/13.png",
+                "/portfolio-react/images/project/uniflea/14.png",
+                "/portfolio-react/images/project/uniflea/15.png",
+                "/portfolio-react/images/project/uniflea/16.png",
+                "/portfolio-react/images/project/uniflea/17.png"
             ],
             "website": "https://uniflea.azurewebsites.net/",
             "available": false
@@ -39,8 +39,8 @@
         {
             "title": "PANAISpeak",
             "description": "An educational web application integrating a fine-tuned Whisper model for speech recognition.",
-            "card_bg": "/images/project/panaispeak/main.png",
-            "avatar": "/images/project/panaispeak/avatar.png",
+            "card_bg": "/portfolio-react/images/project/panaispeak/main.png",
+            "avatar": "/portfolio-react/images/project/panaispeak/avatar.png",
             "avatar_fb": "PS",
             "tech_badge": [
                 "Vue.js",
@@ -53,19 +53,19 @@
             ],
             "about": "PANAISpeak is the product of my final year project (FYP). This educational web application integrates a fine-tuned Whisper model, which has been specifically fine-tuned with a collected dataset of Malaysian children aged 4 to 7. The goal is to provide an effective learning experience for Malaysian children, enhancing their educational journey through advanced speech recognition technology.",
             "images": [
-                "/images/project/panaispeak/1.png",
-                "/images/project/panaispeak/2.png",
-                "/images/project/panaispeak/3.png",
-                "/images/project/panaispeak/4.png",
-                "/images/project/panaispeak/5.png",
-                "/images/project/panaispeak/6.png",
-                "/images/project/panaispeak/7.png",
-                "/images/project/panaispeak/8.png",
-                "/images/project/panaispeak/9.png",
-                "/images/project/panaispeak/10.png",
-                "/images/project/panaispeak/11.png",
-                "/images/project/panaispeak/12.png",
-                "/images/project/panaispeak/13.png"
+                "/portfolio-react/images/project/panaispeak/1.png",
+                "/portfolio-react/images/project/panaispeak/2.png",
+                "/portfolio-react/images/project/panaispeak/3.png",
+                "/portfolio-react/images/project/panaispeak/4.png",
+                "/portfolio-react/images/project/panaispeak/5.png",
+                "/portfolio-react/images/project/panaispeak/6.png",
+                "/portfolio-react/images/project/panaispeak/7.png",
+                "/portfolio-react/images/project/panaispeak/8.png",
+                "/portfolio-react/images/project/panaispeak/9.png",
+                "/portfolio-react/images/project/panaispeak/10.png",
+                "/portfolio-react/images/project/panaispeak/11.png",
+                "/portfolio-react/images/project/panaispeak/12.png",
+                "/portfolio-react/images/project/panaispeak/13.png"
             ],
             "website": "https://black-mud-012805500.5.azurestaticapps.net/"
         }
@@ -104,9 +104,9 @@
             "title": "Senior Category Champion • Global Nominee - NASA Space Apps Sarawak 2023 Hackathon",
             "content": "<div><p>My team, MakeItReal, and I proudly participated in the NASA Space Apps Sarawak 2023 Hackathon organized by the Ministry of Education, Innovation and Talent Development (MEITD). It was launched on Friday, 6 October, at 8.30pm. The event commenced at 9pm the same day and continued non-stop until 9pm on Sunday, October 8. For this hackathon, we selected the challenge 'A Marketplace for Open Science Projects.' To meet the objectives of this challenge, we developed the OPENHUB web application. OPENHUB serves as a platform to connect researchers, developers, and enthusiasts, enabling them to collaborate on open science projects effectively. <br><br> Team Details: <a href=\"https://www.spaceappschallenge.org/2023/find-a-team/makeitreal/\" target=\"_blank\"  class=\"text-blue-700 underline\" rel=\"noopener noreferrer\">MakeItReal</a></p></div>",
             "images": [
-                "/images/achievements/1.jpg",
-                "/images/achievements/2.jpg",
-                "/images/achievements/3.jpg"
+                "/portfolio-react/images/achievements/1.jpg",
+                "/portfolio-react/images/achievements/2.jpg",
+                "/portfolio-react/images/achievements/3.jpg"
             ],
             "isRecognition": true,
             "recognitions": [
@@ -128,9 +128,9 @@
             "title": "King's Scout Award",
             "content": "<div><p>The King's Scout Award is the highest award of the Scouts Association of Malaysia (PPM). I was honored to receive this prestigious award, issued by the Scouts Association of Malaysia on 4th May 2019. The certificate is signed by His Majesty the Yang di-Pertuan Agong of Malaysia and all the sultans in Malaysia. To earn this award, I successfully completed the King's Scout Rating Test Camp (King's Scout Assessment Camp) from 20 July 2017 to 22 July 2017, a rigorous 4-day, 3-night camp organized by the respective State King's Scout Evaluation Council.</p></div>",
             "images": [
-                "/images/achievements/4.jpg",
-                "/images/achievements/5.jpg",
-                "/images/achievements/6.jpg"
+                "/portfolio-react/images/achievements/4.jpg",
+                "/portfolio-react/images/achievements/5.jpg",
+                "/portfolio-react/images/achievements/6.jpg"
             ],
             "isRecognition": true,
             "recognitions": [
@@ -144,7 +144,7 @@
             "title": "Bronze Medal - Kangaroo Math Competition (KMC)",
             "content": "<div><p>I participated in the Kangaroo Math Competition (KMC) on 14th March 2019, a renowned international math competition. The competition ranks the top 10% of participants in each category as MEDALISTS, awarding Gold, Silver, and Bronze medals. I was honored to be among the top participants and to have achieved recognition in this prestigious event.</p></div>",
             "images": [
-                "/images/achievements/7.jpg"
+                "/portfolio-react/images/achievements/7.jpg"
             ],
             "isRecognition": false
         }

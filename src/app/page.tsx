@@ -16,7 +16,7 @@ export default function Home() {
 
         <div className="rounded-lg relative">
           <Image
-            src="/images/lai-weng-hong.png"
+            src="/portfolio-react/images/lai-weng-hong.png"
             alt="Lai Weng Hong Profile Picture"
             className="bg-neon-pink rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-110"
             width={375}
