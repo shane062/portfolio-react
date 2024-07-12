@@ -32,14 +32,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Next.js application
+      - name: Build and export Next.js application
         run: npm run build
 
-      - name: Export static site
-        run: npm run export
-
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3.9.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run deploy
