@@ -68,10 +68,10 @@ export default function Achievements() {
 
       <div className="col-span-12 grid grid-cols-12 grid-flow-row-dense justify-items-center gap-4 sm:gap-8 sm:p-4">
         {achievements.map((achievement, index) => (
-          <div key={index} className="xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-12 min-w-full col-start-2">
+          <div key={index} className="grid grid-cols-12 xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-12">
             <Dialog>
-              <DialogTrigger asChild>
-                <div className="cursor-pointer relative">
+              <DialogTrigger asChild className="col-span-12">
+                <div className="cursor-pointer relative sm:px-0 px-4">
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger>
@@ -94,19 +94,19 @@ export default function Achievements() {
 
               </DialogTrigger>
 
-              <DialogContent className="overflow-y-auto max-h-screen lg:max-w-[60vw] md:max-w-[65vw] sm:max-w-[70vw]  sm:min-h-[calc(100vh-10vh)]">
+              <DialogContent className="overflow-y-scroll max-h-screen lg:max-w-[60vw] md:max-w-[65vw] sm:max-w-[70vw]  sm:min-h-[calc(100vh-10vh)]">
                 <DialogTitle className='text-balance sm:text-2xl font-extrabold'>{achievement.title}</DialogTitle>
                 <div className="grid grid-cols-12 gap-4 py-4">
                   {/* Images */}
                   <div className='relative flex col-span-12 justify-center'>
-                    <Carousel className="max-w-sm" setApi={setApi}>
+                    <Carousel className="max-w-sm " setApi={setApi}>
                       <CarouselContent>
                         {achievement.images.map((image, index) => (
                           <CarouselItem key={index}>
                             <div className="p-1">
                               <Card>
                                 <CardContent className="flex aspect-square items-center justify-center p-6">
-                                  <div className="relative w-full h-full max-w-80 max-h-80">
+                                  <div className="relative max-w-60 max-w-80 max-h-80">
                                     <Image
                                       src={image}
                                       className="object-contain w-full h-full"

@@ -86,7 +86,7 @@ export default function Projects() {
                     </Tooltip>
                   </TooltipProvider>
               </DialogTrigger>
-              <DialogContent className="overflow-y-auto max-h-screen lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] xs:max-w-[90vw] max-w-[100vw] py-4">
+              <DialogContent className="overflow-y-scroll max-h-screen lg:max-w-[60vw] md:max-w-[70vw] sm:max-w-[80vw] xs:max-w-[90vw] max-w-[100vw] py-4">
                 <div className="grid grid-cols-12 gap-4 ">
                   <div className='grid col-span-12'>
                     <span className='text-balance text-xl sm:text-2xl font-extrabold'>{project.title}</span>
