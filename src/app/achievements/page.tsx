@@ -96,7 +96,7 @@ export default function Achievements() {
 
               <DialogContent className="overflow-y-scroll max-h-screen lg:max-w-[60vw] md:max-w-[65vw] sm:max-w-[70vw]  sm:min-h-[calc(100vh-10vh)]">
                 <DialogTitle className='text-balance sm:text-2xl font-extrabold'>{achievement.title}</DialogTitle>
-                <div className="grid grid-cols-12 gap-4 py-4">
+                <div className="grid grid-cols-12 gap-4 pt-6 pb-4 xs:pt-0 xs:pb-0">
                   {/* Images */}
                   <div className='relative flex col-span-12 justify-center'>
                     <Carousel className="max-w-sm " setApi={setApi}>
