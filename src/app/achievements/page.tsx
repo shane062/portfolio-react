@@ -17,6 +17,7 @@ import {
   DialogContent,
   DialogTitle,
   DialogTrigger,
+  DialogClose
 } from "@/components/ui/dialog"
 import {
   Tooltip,
@@ -47,14 +48,14 @@ export default function Achievements() {
 
   React.useEffect(() => {
     if (!api) {
-        return
+      return
     }
     setCurrent(api.selectedScrollSnap())
 
     api.on("select", () => {
-        setCurrent(api.selectedScrollSnap())
+      setCurrent(api.selectedScrollSnap())
     })
-}, [api])
+  }, [api])
 
 
   return (
@@ -105,38 +106,56 @@ export default function Achievements() {
                           <CarouselItem key={index}>
                             <div className="p-1">
                               <Card>
-                                <CardContent className="flex aspect-square items-center justify-center p-6">
-                                  <div className="relative max-w-60 max-w-80 max-h-80">
-                                    <Image
-                                      src={image}
-                                      className="object-contain w-full h-full"
-                                      alt={`${title} Image ${index + 1}`}
-                                      width={500}
-                                      height={500}
-                                      priority={true}
-                                      quality={100}
-                                    />
-                                  </div>
-                                </CardContent>
+
+                                <Dialog>
+                                  <DialogTrigger>
+                                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                                      <div className="relative max-w-60 max-w-80 max-h-80">
+                                        <Image
+                                          src={image}
+                                          className="object-contain w-full h-full"
+                                          alt={`${title} Image ${index + 1}`}
+                                          width={500}
+                                          height={500}
+                                          priority={true}
+                                          quality={100}
+                                        />
+                                      </div>
+                                    </CardContent>
+                                  </DialogTrigger>
+                                  <DialogContent className="max-w-full max-h-screen p-0 bg-black/80 bg-opacity-50 cursor-zoom-out ">
+                                    <DialogClose asChild>
+                                      <div className=" w-full h-screen">
+                                        <Image
+                                          src={image}
+                                          alt="Zoomed experience image"
+                                          layout="fill"
+                                          className="object-contain w-full h-full"
+                                        />
+                                      </div>
+                                    </DialogClose>
+                                  </DialogContent>
+                                </Dialog>
+
                               </Card>
                             </div>
                           </CarouselItem>
                         ))}
                       </CarouselContent>
-                      <CarouselPrevious className='hidden xs:flex'/>
-                      <CarouselNext className='hidden xs:flex'/>
+                      <CarouselPrevious className='hidden xs:flex' />
+                      <CarouselNext className='hidden xs:flex' />
                     </Carousel>
                     <div className="absolute inset-x-0 bottom-0 flex justify-center align-center mb-4">
-                {achievement.images.map((_, index) => (
-                    <>
-                        {index === current ? (
+                      {achievement.images.map((_, index) => (
+                        <>
+                          {index === current ? (
                             <FiberManualRecordIcon className="{w-3 h-3 rounded-full " />
-                        ) : (
+                          ) : (
                             <FiberManualRecordOutlinedIcon className="{w-3 h-3 rounded-full " />
-                        )}
-                    </>
-                ))}
-            </div>
+                          )}
+                        </>
+                      ))}
+                    </div>
                   </div>
 
                   <div className='grid col-span-12'>

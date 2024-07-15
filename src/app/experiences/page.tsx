@@ -15,11 +15,11 @@ import { useMediaQuery } from '@mui/material';
 export default function CustomizedTimeline() {
     const [experiences, setExperiences] = useState<Experience[]>([]);
     const [zoomedImage, setZoomedImage] = useState(null);
-    // Function to open zoomed image
+
     const openZoomedImage = (imageUrl) => {
         setZoomedImage(imageUrl);
     };
-    // Function to close zoomed image
+
     const closeZoomedImage = () => {
         setZoomedImage(null);
     };

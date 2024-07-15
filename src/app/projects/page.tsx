@@ -10,6 +10,7 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogClose
 } from "@/components/ui/dialog"
 import {
   Carousel,
@@ -64,29 +65,30 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="col-span-12 grid grid-cols-12 grid-flow-col place-items-stretch min-w-ft gap-4 sm:gap-8 sm:p-4">
+      <div className="col-span-12 grid grid-cols-12 place-items-stretch min-w-ft gap-4 sm:gap-8 sm:p-4">
         {projects.map((project, index) => (
-          <div key={index} className="grid grid0cols-12 xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-10 col-start-2">
+          <div key={index} className="grid grid-cols-12 xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-10 col-start-2">
+
             <Dialog>
-              <DialogTrigger className="grid place-items-stretch">
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <ProjectCard className="place-self-center"
-                          title={project.title}
-                          description={project.description}
-                          card_bg={project["card_bg"]}
-                          avatar={project["avatar"]}
-                          avatar_fb={project.avatar_fb}
-                          tech_badge={project.tech_badge} />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>{project.title}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+              <DialogTrigger className="grid col-span-12 place-items-stretch">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <ProjectCard className="place-self-center"
+                        title={project.title}
+                        description={project.description}
+                        card_bg={project["card_bg"]}
+                        avatar={project["avatar"]}
+                        avatar_fb={project.avatar_fb}
+                        tech_badge={project.tech_badge} />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>{project.title}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </DialogTrigger>
-              <DialogContent className="overflow-y-scroll max-h-screen lg:max-w-[60vw] md:max-w-[65vw] sm:max-w-[70vw]  sm:min-h-[calc(100vh-10vh)]">
+              <DialogContent className="overflow-y-scroll max-h-screen lg:max-w-[60vw] md:max-w-[65vw] sm:max-w-[70vw] sm:min-h-[calc(100vh-10vh)]">
                 <div className="grid grid-cols-12 gap-4 pt-6 pb-4 xs:pt-0 xs:pb-0">
                   <div className='grid col-span-12'>
                     <span className='text-balance text-xl sm:text-2xl font-extrabold'>{project.title}</span>
@@ -103,19 +105,38 @@ export default function Projects() {
                           <CarouselItem key={index}>
                             <div className="p-1">
                               <Card>
-                                <CardContent className="flex aspect-square items-center justify-center p-6">
-                                  <div className="relative w-full h-full max-w-80 max-h-80">
-                                    <Image
-                                      src={image}
-                                      className="object-contain w-full h-full"
-                                      alt={`Project image ${index + 1}`}
-                                      width={500}
-                                      height={500}
-                                      priority={true}
-                                      quality={100}
-                                    />
-                                  </div>
-                                </CardContent>
+
+                                <Dialog>
+                                  <DialogTrigger>
+                                    <CardContent className="flex aspect-square items-center justify-center p-6 w-full h-full">
+                                      <div className="relative w-full h-full max-w-80 max-h-80">
+                                        <Image
+                                          src={image}
+                                          className="object-contain w-full h-full"
+                                          alt={`Project image ${index + 1}`}
+                                          width={500}
+                                          height={500}
+                                          priority={true}
+                                          quality={100}
+                                        />
+                                      </div>
+                                    </CardContent>
+                                  </DialogTrigger>
+                                  <DialogContent className="max-w-full max-h-screen p-0 bg-black/80 bg-opacity-50 cursor-zoom-out ">
+                                  <DialogClose asChild>
+                                    <div className=" w-full h-screen">
+                                      <Image
+                                        src={image}
+                                        alt="Zoomed experience image"
+                                        layout="fill"
+                                        className="object-contain w-full h-full"
+                                      />
+                                    </div>
+                                    </DialogClose>
+                                  </DialogContent>
+                                </Dialog>
+
+
                               </Card>
                             </div>
                           </CarouselItem>
@@ -141,9 +162,7 @@ export default function Projects() {
 
                   <div className='grid col-span-12'>
                     <span className='text-balance text-xl sm:text-2xl font-extrabold'>About</span>
-                    <span className="text-balance text-xs sm:text-sm text-muted-foreground text-justify">
-                      {project.about}
-                    </span>
+                    <span className="text-balance text-xs sm:text-sm text-muted-foreground text-justify" dangerouslySetInnerHTML={{ __html: project.about }} />
                   </div>
 
                   <div className='grid col-span-12'>
@@ -154,34 +173,32 @@ export default function Projects() {
                       ))}
                     </span>
                   </div>
-
-                  <div className='grid col-span-12'>
-                    <span className='text-balance text-xl sm:text-2xl font-extrabold'>Website</span>
-                    <div className='flex flex-wrap gap-2 my-1'>
-                      <Link
-                        className="text-balance text-xs sm:text-sm text-muted-foreground text-justify text-blue-700 underline"
-                        href={project.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {project.website}
-                      </Link>
-                      {
-                        project.available == false && (
-                          <Badge key={index} className='text-balance text-[8px] sm:text-[10px]'>Not Available</Badge>
-                        )
-                      }
+                  {project.website && (
+                    <div className='grid col-span-12'>
+                      <span className='text-balance text-xl sm:text-2xl font-extrabold'>Website</span>
+                      <div className='flex flex-wrap gap-2 my-1'>
+                        <Link
+                          className="text-balance text-xs sm:text-sm text-muted-foreground text-justify text-blue-700 underline"
+                          href={project.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {project.website}
+                        </Link>
+                        {
+                          project.available == false && (
+                            <Badge key={index} className='text-balance text-[8px] sm:text-[10px]'>Not Available</Badge>
+                          )
+                        }
+                      </div>
                     </div>
-
-                  </div>
-
+                  )}
                 </div>
-                {/* <DialogFooter>
-
-                </DialogFooter> */}
               </DialogContent>
+
             </Dialog>
           </div>
+
         ))}
       </div>
     </div>

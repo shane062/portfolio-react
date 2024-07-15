@@ -1,6 +1,49 @@
 {
     "projects": [
         {
+            "title": "Arngren",
+            "description": "A modernized and user-friendly redesign of the eclectic Norwegian website, Arngren.",
+            "card_bg": "/portfolio-react/images/project/arngren/main.png",
+            "avatar": "/portfolio-react/images/project/arngren/avatar.png",
+            "avatar_fb": "AR",
+            "tech_badge": [
+                "PHP",
+                "MySQL"
+            ],
+            "about": "<div><p>This project was created by me and my team, Lowkey, consisting of four members. It is a product of our university course, Web-based System Development. We've revamped the original Arngren website, enhancing its design and functionality to provide a better user experience. <br><br> For more details, visit the <a href=\"https://arngren.net/\" target=\"_blank\" class=\"text-blue-700 underline\" rel=\"noopener noreferrer\">original Arngren website</a>.</p></div>",
+            "images": [
+                "/portfolio-react/images/project/arngren/1.png",
+                "/portfolio-react/images/project/arngren/2.png",
+                "/portfolio-react/images/project/arngren/3.png",
+                "/portfolio-react/images/project/arngren/4.png",
+                "/portfolio-react/images/project/arngren/5.png",
+                "/portfolio-react/images/project/arngren/6.png",
+                "/portfolio-react/images/project/arngren/7.png",
+                "/portfolio-react/images/project/arngren/8.png",
+                "/portfolio-react/images/project/arngren/9.png"
+            ],
+            "website": "https://tme2104-g03-lowkey-arngren.000webhostapp.com/",
+            "available": false
+        },
+        {
+            "title": "Health Diary App",
+            "description": "A simple BMI and health tracking Java application.",
+            "card_bg": "/portfolio-react/images/project/health_diary/main.png",
+            "avatar": "/portfolio-react/images/project/health_diary/avatar.png",
+            "avatar_fb": "HD",
+            "tech_badge": [
+                "Java",
+            ],
+            "about": "<div><p>This Health Diary App is a project for our university course, Java Programming. The app allows users to calculate their BMI, save records, and track their BMI history over time.</p></div>",
+            "images": [
+                "/portfolio-react/images/project/health_diary/1.png",
+                "/portfolio-react/images/project/health_diary/2.png",
+                "/portfolio-react/images/project/health_diary/3.png",
+                "/portfolio-react/images/project/health_diary/4.png",
+                "/portfolio-react/images/project/health_diary/5.png"
+            ]
+        },
+        {
             "title": "Uniflea",
             "description": "A web-based flea marketplace application.",
             "card_bg": "/portfolio-react/images/project/uniflea/main.png",
