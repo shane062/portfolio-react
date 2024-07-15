@@ -32,7 +32,7 @@
             "avatar": "/portfolio-react/images/project/health_diary/avatar.png",
             "avatar_fb": "HD",
             "tech_badge": [
-                "Java",
+                "Java"
             ],
             "about": "<div><p>This Health Diary App is a project for our university course, Java Programming. The app allows users to calculate their BMI, save records, and track their BMI history over time.</p></div>",
             "images": [
