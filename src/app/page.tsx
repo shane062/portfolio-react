@@ -6,7 +6,7 @@ export default function Home() {
       <div className="col-span-12 text-justify content-center md:col-span-4 md:col-end-7 mb-4 md:mb-0 mr-8">
         <h1 className="text-2xl font-extrabold tracking-tight lg:text-5xl md:text-4xl sm:text-4xl">Hello, <br />I'm Lai Weng Hong</h1>
         <p className="text-md text-muted-foreground md:text-xl sm:text-lg">
-        A fresh graduate from Universiti Malaysia Sarawak (UNIMAS) with a Bachelor of Computer Science with Honours (Software Engineering) and a passion for full-stack development.
+        Software Engineer I @ Appsploration Sdn Bhd (a subsidiary of Innity Sdn Bhd). Passionate about full-stack development and cloud engineering.
         </p>
       </div>
 

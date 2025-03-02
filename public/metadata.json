@@ -115,8 +115,28 @@
     ],
     "experiences": [
         {
+            "time": "September 2024 - present",
+            "company": "Appsploration Sdn Bhd",
+            "title": "Software Engineer I",
+            "content": "Focused on AWS Cloud Engineering for RewardFX, a rewarding system built entirely on AWS. Managed Event-Driven Architecture (EDA) using a range of AWS services, including Lambda, DynamoDB (DDB), API Gateway, RDS, EventBridge, Scheduler, AWS SAM, and LocalStack. Utilized Docker for containerization to streamline development and deployment processes.",
+            "image": "/portfolio-react/images/experiences/2.jpg",
+            "tech_badge": [
+                "Node.js",
+                "AWS Lambda",
+                "DynamoDB",
+                "RDS",
+                "API Gateway",
+                "EventBridge",
+                "Scheduler",
+                "AWS SAM",
+                "LocalStack",
+                "Docker",
+                "Event-Driven Architecture"
+            ]
+        },
+        {
             "time": "August - October 2023",
-            "company": "Datasonic Smart Solution SHD BHD",
+            "company": "Datasonic Smart Solution Sdn Bhd",
             "title": "Software Engineer",
             "content": "Worked part-time and remotely on the development of the PERKESO (Pertubuhan Keselamatan Sosial) ARTs (Automatic Reporting Tools) platform. Contributed to the user management and automation reporting modules of the platform.",
             "tech_badge": [
@@ -129,7 +149,7 @@
         },
         {
             "time": "February - August 2023",
-            "company": "Datasonic Smart Solution SHD BHD",
+            "company": "Datasonic Smart Solution Sdn Bhd",
             "title": "Software Engineer Intern",
             "content": "Worked on Immigration Department of Malaysia (Jabatan Imigresen Malaysia)'s i-KAD project, focusing on the development of both frontend and backend components of the i-KAD Printing Management System, i-KAD Issuance, and i-KAD Renewal.",
             "image": "/portfolio-react/images/experiences/1.jpg",
