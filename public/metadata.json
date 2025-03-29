@@ -110,7 +110,8 @@
                 "/portfolio-react/images/project/panaispeak/12.png",
                 "/portfolio-react/images/project/panaispeak/13.png"
             ],
-            "website": "https://black-mud-012805500.5.azurestaticapps.net/"
+            "website": "https://black-mud-012805500.5.azurestaticapps.net/",
+            "available": false
         }
     ],
     "experiences": [
