@@ -4,197 +4,106 @@ import { useEffect, useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image";
 import Link from 'next/link';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-  type CarouselApi,
-} from "@/components/ui/carousel"
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogTrigger,
-  DialogClose
-} from "@/components/ui/dialog"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { Dialog, DialogContent, DialogTrigger, DialogTitle, DialogClose } from "@/components/ui/dialog"
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel"
 import { Achievement } from '@/types/type';
-import { AchievementCarousel } from "@/components/AchievementCarousel";
-import { title } from "process";
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
 
 export default function Achievements() {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
 
   useEffect(() => {
     async function fetchAchievements() {
-      const response = await fetch("/portfolio-react/metadata.json");
+      const response = await fetch("/metadata.json");
       const data = await response.json();
       setAchievements(data.achievements);
     }
     fetchAchievements();
   }, []);
 
-  const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState(0)
-
   React.useEffect(() => {
-    if (!api) {
-      return
-    }
-    setCurrent(api.selectedScrollSnap())
-
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap())
-    })
-  }, [api])
-
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
-    <div className="grid grid-cols-12 justify-items-center min-h-[calc(100vh-161px)] sm:px-8 py-4">
-      <div className="col-span-10 col-start-2 col-end-12 p-8 lg:col-span-6 lg:col-start-4 lg:col-end-10 md:col-span-8 md:col-start-3 md:col-end-11 p-8">
-        <h1 className="text-balance font-extrabold tracking-tight lg:text-4xl md:text-3xl sm:text-2xl xs:text-lg text-md text-center">_achievement(s)</h1>
-        <p className="text-balance lg:text-lg md:text-md sm:text-sm text-xs text-muted-foreground text-justify leading-tight">
-          Highlighted accomplishments I've received.
-        </p>
-      </div>
-
-      <div className="col-span-12 grid grid-cols-12 grid-flow-row-dense justify-items-center gap-4 sm:gap-8 sm:p-4">
-        {achievements.map((achievement, index) => (
-          <div key={index} className="grid grid-cols-12 xl:col-span-3 md:col-span-4 sm:col-span-6 col-span-12">
-            <Dialog>
-              <DialogTrigger asChild className="col-span-12">
-                <div className="cursor-pointer relative sm:px-0 px-4">
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger>
-                        <AchievementCarousel
-                          key={index}
-                          title={achievement.title}
-                          content={achievement.content}
-                          images={achievement.images}
-                          isRecognition={achievement.isRecognition}
-                          recognitions={achievement.recognitions}
-                        />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>{achievement.title}</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-
-                </div>
-
-              </DialogTrigger>
-
-              <DialogContent className="overflow-y-scroll max-h-screen lg:max-w-[60vw] md:max-w-[65vw] sm:max-w-[70vw]  sm:min-h-[calc(100vh-10vh)]">
-                <DialogTitle className='text-balance sm:text-2xl font-extrabold'>{achievement.title}</DialogTitle>
-                <div className="grid grid-cols-12 gap-4 pt-6 pb-4 xs:pt-0 xs:pb-0">
-                  {/* Images */}
-                  <div className='relative flex col-span-12 justify-center'>
-                    <Carousel className="max-w-sm " setApi={setApi}>
-                      <CarouselContent>
-                        {achievement.images.map((image, index) => (
-                          <CarouselItem key={index}>
-                            <div className="p-1">
-                              <Card>
-
-                                <Dialog>
-                                  <DialogTrigger>
-                                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                                      <div className="relative max-w-60 max-w-80 max-h-80">
-                                        <Image
-                                          src={image}
-                                          className="object-contain w-full h-full"
-                                          alt={`${title} Image ${index + 1}`}
-                                          width={500}
-                                          height={500}
-                                          priority={true}
-                                          quality={100}
-                                        />
-                                      </div>
-                                    </CardContent>
-                                  </DialogTrigger>
-                                  <DialogContent className="max-w-full max-h-screen p-0 bg-black/80 bg-opacity-50 cursor-zoom-out ">
-                                    <DialogClose asChild>
-                                      <div className=" w-full h-screen">
-                                        <Image
-                                          src={image}
-                                          alt="Zoomed experience image"
-                                          layout="fill"
-                                          className="object-contain w-full h-full"
-                                        />
-                                      </div>
-                                    </DialogClose>
-                                  </DialogContent>
-                                </Dialog>
-
-                              </Card>
-                            </div>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      <CarouselPrevious className='hidden xs:flex' />
-                      <CarouselNext className='hidden xs:flex' />
-                    </Carousel>
-                    <div className="absolute inset-x-0 bottom-0 flex justify-center align-center mb-4">
-                      {achievement.images.map((_, index) => (
-                        <>
-                          {index === current ? (
-                            <FiberManualRecordIcon className="{w-3 h-3 rounded-full " />
-                          ) : (
-                            <FiberManualRecordOutlinedIcon className="{w-3 h-3 rounded-full " />
-                          )}
-                        </>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className='grid col-span-12'>
-                    <span className='text-balance text-xl sm:text-2xl font-extrabold'>About</span>
-                    <span className="text-balance text-xs sm:text-sm text-muted-foreground text-justify" dangerouslySetInnerHTML={{ __html: achievement.content }} />
-                  </div>
-
-                  {achievement.isRecognition && (
-                    <div className='grid col-span-12'>
-                      <span className='text-balance text-xl sm:text-2xl font-extrabold'>Recognition</span>
-                      <div>
-                        {achievement.recognitions.map((recognition, index) => (
-                          <Link
-                            className="text-balance text-xs sm:text-sm text-muted-foreground text-justify block text-blue-700 underline py-1"
-                            href={recognition.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {recognition.title}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                </div>
-                {/* <DialogFooter>
-
-                </DialogFooter> */}
-              </DialogContent>
-            </Dialog>
-
+    <main className="min-h-screen pt-32 pb-20 max-w-7xl mx-auto px-8">
+      {/* Hero Section */}
+      <header className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div className="max-w-2xl">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-12 h-[2px] bg-teal-600"></span>
+            <span className="text-teal-600 font-bold tracking-widest uppercase text-xs">Hall of Recognition</span>
           </div>
-        ))}
+          <h1 className="text-6xl font-extrabold tracking-tighter text-slate-900 dark:text-white mb-6 leading-[1.1]">
+            Milestones & <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600">Excellence</span>.
+          </h1>
+          <p className="text-lg text-slate-500 dark:text-slate-400 max-w-lg leading-relaxed">
+            A curated archive of technical certifications, industry awards, and contributions to the global engineering community.
+          </p>
+        </div>
+      </header>
 
+      {/* Achievements Bento Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24">
+        {achievements.map((achievement, index) => {
+          // Make the first item large (Principal Card style)
+          if (index === 0) {
+            return (
+              <div key={index} className="md:col-span-8 group relative overflow-hidden bg-white dark:bg-slate-900 rounded-xl p-8 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row gap-10 hover:shadow-lg transition-shadow cursor-pointer">
+                 <Dialog>
+                    <DialogTrigger className="flex flex-col md:flex-row gap-10 text-left outline-none w-full h-full">
+                        <div className="flex-1 order-2 md:order-1 flex flex-col">
+                          <div className="mb-8">
+                            <span className="material-symbols-outlined text-4xl text-yellow-600 mb-4" style={{ fontVariationSettings: "'FILL' 1" }}>trophy</span>
+                            <h2 className="text-3xl font-bold tracking-tight mb-2 text-slate-900 dark:text-white">{achievement.title}</h2>
+                            <p className="text-slate-500 dark:text-slate-400 mb-6 text-lg line-clamp-3" dangerouslySetInnerHTML={{ __html: achievement.content }}></p>
+                          </div>
+                        </div>
+                        <div className="w-full md:w-64 h-80 rounded-lg overflow-hidden order-1 md:order-2 shadow-sm shrink-0">
+                          {achievement.images[0] && (
+                            <Image src={achievement.images[0]} alt={achievement.title} width={300} height={400} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                          )}
+                        </div>
+                    </DialogTrigger>
+                    {/* Reuse your existing Dialog Content below */}
+                    <DialogContent className="overflow-y-scroll max-h-screen lg:max-w-[60vw]">
+                        <DialogTitle className='text-balance sm:text-2xl font-extrabold'>{achievement.title}</DialogTitle>
+                        <div className="py-4"><p dangerouslySetInnerHTML={{ __html: achievement.content }}></p></div>
+                    </DialogContent>
+                 </Dialog>
+              </div>
+            );
+          }
+
+          // Render the rest as smaller grid items
+          return (
+            <div key={index} className="md:col-span-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl p-8 border border-slate-200/50 dark:border-slate-800 hover:border-teal-500/30 transition-colors cursor-pointer flex flex-col justify-between group">
+                <Dialog>
+                    <DialogTrigger className="text-left outline-none h-full flex flex-col">
+                        <div className="w-16 h-16 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center mb-6 shadow-sm border border-slate-100 dark:border-slate-700 group-hover:scale-105 transition-transform">
+                            <span className="material-symbols-outlined text-3xl text-purple-600" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+                        </div>
+                        <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{achievement.title}</h3>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3" dangerouslySetInnerHTML={{ __html: achievement.content }}></p>
+                        <div className="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800 w-full flex justify-between items-center">
+                            <span className="text-xs font-bold tracking-wider uppercase text-slate-400">View Details</span>
+                            <span className="material-symbols-outlined text-teal-500 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </div>
+                    </DialogTrigger>
+                    <DialogContent className="overflow-y-scroll max-h-screen lg:max-w-[60vw]">
+                        <DialogTitle className='text-balance sm:text-2xl font-extrabold'>{achievement.title}</DialogTitle>
+                        <div className="py-4"><p dangerouslySetInnerHTML={{ __html: achievement.content }}></p></div>
+                    </DialogContent>
+                </Dialog>
+            </div>
+          );
+        })}
       </div>
-
-    </div>
+    </main>
   );
 }
-
-

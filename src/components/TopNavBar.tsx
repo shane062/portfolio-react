@@ -1,118 +1,76 @@
 "use client"
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation'
 import * as React from "react"
 import { MoonIcon, SunIcon, HamburgerMenuIcon } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
-import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 const TopNavBar = () => {
     const { setTheme, theme } = useTheme()
     const router = useRouter()
+    const pathname = usePathname()
+
+    const navLinks = [
+        { name: 'HOME', path: '/' },
+        { name: 'PROJECTS', path: '/projects' },
+        { name: 'ACHIEVEMENTS', path: '/achievements' },
+        { name: 'EXPERIENCE', path: '/experiences' },
+    ]
 
     return (
-        <header className="sticky top-0 flex h-16 justify-end items-center gap-4 border-b bg-background px-4 md:px-6 z-10 shadow-md">
-            <nav className="hidden gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-                <Link
-                    href="/"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
-                >
-                    Home
-                </Link>
-                <Link
-                    href="/projects"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
-                >
-                    Projects
-                </Link>
-                <Link
-                    href="/achievements"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
-                >
-                    Achievements
-                </Link>
-                <Link
-                    href="/experiences"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
-                >
-                    Experiences
-                </Link>
-                <TooltipProvider>
-                    <Tooltip>
-                        <TooltipTrigger asChild>
-                            <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
-                                <span>
-                                    <Button variant="outline" size="icon">
-                                        <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                                        <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                                        <span className="sr-only">Toggle theme</span>
-                                    </Button>
-                                    </span>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent align="end">
-                                    <DropdownMenuItem onClick={() => setTheme("light")}>
-                                        Light
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem onClick={() => setTheme("dark")}>
-                                        Dark
-                                    </DropdownMenuItem>
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                            <p>Toggle Theme</p>
-                        </TooltipContent>
-                    </Tooltip>
-                </TooltipProvider>
-            </nav>
-            <nav className="flex flex-row gap-6 text-lg font-medium md:hidden md:items-center md:gap-5 md:text-sm lg:gap-6">
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button variant="outline" size="icon">
-                            <HamburgerMenuIcon className="h-[1.2rem] w-[1.2rem]" />
-                        </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                        <DropdownMenuItem onClick={() => router.push('/')}>
-                            Home
-                        </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => router.push('/projects')}>
-                            Projects
-                        </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => router.push('/achievements')}>
-                            Achievements
-                        </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => router.push('/experiences')}>
-                            Experiences
-                        </DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => theme == "dark" ? setTheme("light") : setTheme("dark")}>
-                            <div className='flex'>
-                                Switch Theme:
-                                {theme == "dark" ? (
-                                    <MoonIcon className="mx-1 h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                                ) : (
-                                    <SunIcon className="mx-1 h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                                )}
-                            </div>
-                        </DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
-            </nav>
-        </header>
+        <header className="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border-b border-slate-200/15 dark:border-slate-800/15 shadow-sm transition-colors duration-300">
+            <div className="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+                <div className="text-2xl font-black tracking-tighter text-slate-900 dark:text-slate-50">
+                    Lai Weng Hong
+                </div>
+                
+                <nav className="hidden md:flex items-center gap-10">
+                    {navLinks.map((link) => {
+                        const isActive = pathname === link.path;
+                        return (
+                            <Link key={link.name} href={link.path}
+                                className={`font-medium transition-colors duration-200 ${
+                                    isActive 
+                                    ? "text-teal-500 dark:text-teal-400 font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-yellow-600 after:rounded-full" 
+                                    : "text-slate-600 dark:text-slate-400 hover:text-teal-500"
+                                }`}
+                            >
+                                {link.name}
+                            </Link>
+                        )
+                    })}
+                </nav>
 
+                <div className="flex items-center gap-6">
+                    <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="text-slate-600 dark:text-slate-400">
+                        <SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                        <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                        <span className="sr-only">Toggle theme</span>
+                    </Button>
+                    <button className="hidden md:block bg-gradient-to-r from-teal-400 to-purple-600 text-white px-6 py-2.5 rounded-md font-semibold text-sm hover:scale-105 transition-transform duration-200 active:scale-95">
+                        Connect
+                    </button>
+
+                    {/* Mobile Menu */}
+                    <div className="md:hidden">
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button variant="outline" size="icon"><HamburgerMenuIcon className="h-5 w-5" /></Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                {navLinks.map((link) => (
+                                    <DropdownMenuItem key={link.name} onClick={() => router.push(link.path)}>
+                                        {link.name}
+                                    </DropdownMenuItem>
+                                ))}
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
+                </div>
+            </div>
+        </header>
     );
 };
 

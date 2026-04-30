@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Map port 3000 on the host to port 3000 in the container
+    ports:
+      - "3000:3000"
+    volumes:
+      # Sync current directory with /app inside container for hot-reloading
+      - .:/app
+      # Create an anonymous volume for node_modules so it doesn't get overridden by host OS node_modules
+      - /app/node_modules
+      # Create an anonymous volume for Next.js build cache
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true

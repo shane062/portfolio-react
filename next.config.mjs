@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/portfolio-react",
-  output: "export",
+  // Remove output: "export" for local dev
   reactStrictMode: true,
   images: {
     unoptimized: true,
