@@ -5,13 +5,14 @@ import Image from "next/image";
 import Link from 'next/link';
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog"
 import { Achievement } from '@/types/type';
+import { assetUrl } from '@/lib/basePath';
 
 export default function Achievements() {
   const [achievements, setAchievements] = useState<Achievement[]>([]);
 
   useEffect(() => {
     async function fetchAchievements() {
-      const response = await fetch("/metadata.json");
+      const response = await fetch(assetUrl("/metadata.json"));
       const data = await response.json();
       setAchievements(data.achievements);
     }
@@ -63,7 +64,7 @@ export default function Achievements() {
                     </div>
                     <div className="w-full md:w-56 h-64 overflow-hidden order-1 md:order-2 shrink-0 border border-black/10 dark:border-white/10">
                       {achievement.images[0] && (
-                        <Image src={achievement.images[0]} alt={achievement.title} width={300} height={400} className="w-full h-full object-cover  group-hover:contrast-150 transition-all duration-500" />
+                        <Image src={assetUrl(achievement.images[0])} alt={achievement.title} width={300} height={400} className="w-full h-full object-cover  group-hover:contrast-150 transition-all duration-500" />
                       )}
                     </div>
                   </DialogTrigger>
@@ -74,7 +75,7 @@ export default function Achievements() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                         {achievement.images.map((img, imgIdx) => (
                           <div key={imgIdx} className="border border-black/10 dark:border-white/10 overflow-hidden">
-                            <Image src={img} alt={`${achievement.title} ${imgIdx + 1}`} width={500} height={400} className="w-full h-auto object-cover " />
+                            <Image src={assetUrl(img)} alt={`${achievement.title} ${imgIdx + 1}`} width={500} height={400} className="w-full h-auto object-cover " />
                           </div>
                         ))}
                       </div>
@@ -116,7 +117,7 @@ export default function Achievements() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                       {achievement.images.map((img, imgIdx) => (
                         <div key={imgIdx} className="border border-black/10 dark:border-white/10 overflow-hidden">
-                          <Image src={img} alt={`${achievement.title} ${imgIdx + 1}`} width={500} height={400} className="w-full h-auto object-cover " />
+                          <Image src={assetUrl(img)} alt={`${achievement.title} ${imgIdx + 1}`} width={500} height={400} className="w-full h-auto object-cover " />
                         </div>
                       ))}
                     </div>

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, MouseEvent, useEffect, useMemo, useCallback } from 'react';
 import Image from "next/image";
+import { assetUrl } from '@/lib/basePath';
 
 export interface Experience {
     company: string;
@@ -41,7 +42,7 @@ export default function NeuralExperienceHub() {
     useEffect(() => {
         async function fetchProjects() {
             try {
-                const response = await fetch("/metadata.json");
+                const response = await fetch(assetUrl("/metadata.json"));
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const data = await response.json();
                 setExperiences(data.experiences || []);
@@ -330,7 +331,7 @@ export default function NeuralExperienceHub() {
                                 {(exp.logo || exp.image) && (
                                     <div className="shrink-0 opacity-80 flex items-center bg-white dark:bg-white p-1.5 grayscale contrast-125">
                                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                                        <img src={(exp.logo || exp.image) as string} loading="lazy" width={32} height={32} className="object-contain h-6 w-auto" alt={exp.company} />
+                                        <img src={assetUrl((exp.logo || exp.image) as string)} loading="lazy" width={32} height={32} className="object-contain h-6 w-auto" alt={exp.company} />
                                     </div>
                                 )}
                                 <div className="break-words max-w-full">
@@ -416,8 +417,8 @@ export default function NeuralExperienceHub() {
                         onMouseLeave={handleNodeLeave}
                     >
                         <div className={`w-28 h-28 border p-1 bg-white dark:bg-black relative transition-colors duration-300 ${isCoreHovered ? 'border-[#ff0000]' : 'border-black dark:border-white'}`}>
-                            <div className={`w-full h-full overflow-hidden bg-black relative transition-all duration-300 ${isCoreHovered ? '' : 'grayscale contrast-125'}`}>
-                                <Image src="/images/lai-weng-hong.png" alt="Profile" fill priority className="object-cover" />
+                            <div className="w-full h-full overflow-hidden bg-black relative">
+                                <Image src={assetUrl("/images/lai-weng-hong.png")} alt="Profile" fill priority className="object-cover" />
                             </div>
                         </div>
 
@@ -431,7 +432,7 @@ export default function NeuralExperienceHub() {
                             <p className="text-xs text-black/60 dark:text-white/60 leading-relaxed mb-4 text-justify">
                                 Specializing in AWS Cloud Engineering and Event-Driven Architectures. Building high-throughput, scalable backend systems.
                             </p>
-                            <a href="/resume.pdf" target="_blank" className="block w-full text-center font-dot-matrix text-[10px] uppercase tracking-widest border border-black dark:border-white text-black dark:text-white py-2 hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-colors">
+                            <a href={assetUrl("/resume.pdf")} target="_blank" className="block w-full text-center font-dot-matrix text-[10px] uppercase tracking-widest border border-black dark:border-white text-black dark:text-white py-2 hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-colors">
                                 [ DOWNLOAD RESUME .PDF ]
                             </a>
                         </div>
@@ -457,7 +458,7 @@ export default function NeuralExperienceHub() {
                                         {data.logo ? (
                                             <div className={`bg-white p-1.5 flex items-center justify-center transition-all duration-300 ${isHovered ? '' : 'grayscale contrast-125'}`}>
                                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                <img src={data.logo} alt={data.company} loading="lazy" className="h-8 w-auto block" />
+                                                <img src={assetUrl(data.logo)} alt={data.company} loading="lazy" className="h-8 w-auto block" />
                                             </div>
                                         ) : (
                                             <div className="h-8 px-3 bg-white flex items-center justify-center text-black font-bold text-[12px] grayscale contrast-125">

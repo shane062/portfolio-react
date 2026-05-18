@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { assetUrl } from "@/lib/basePath";
 
 export default function Home() {
   const techStack = [
@@ -50,7 +51,7 @@ export default function Home() {
             <Link href="/experiences" className="font-dot-matrix text-[10px] uppercase tracking-[0.2em] px-6 py-3 border border-black dark:border-white text-black dark:text-white hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-colors duration-200">
               [ VIEW EXPERIENCE ]
             </Link>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="font-dot-matrix text-[10px] uppercase tracking-[0.2em] px-6 py-3 border border-black/20 dark:border-white/20 text-black/50 dark:text-white/50 hover:border-[#ff0000] hover:text-[#ff0000] transition-colors duration-200">
+            <a href={assetUrl("/resume.pdf")} target="_blank" rel="noopener noreferrer" className="font-dot-matrix text-[10px] uppercase tracking-[0.2em] px-6 py-3 border border-black/20 dark:border-white/20 text-black/50 dark:text-white/50 hover:border-[#ff0000] hover:text-[#ff0000] transition-colors duration-200">
               [ DOWNLOAD RESUME .PDF ]
             </a>
           </div>
@@ -58,7 +59,7 @@ export default function Home() {
         <div className="lg:col-span-5 relative flex justify-center items-center">
           <div className="relative w-full max-w-sm animate-fade-up-delay-2">
             <div className="relative aspect-[4/5] border border-black dark:border-white overflow-hidden scanlines">
-              <Image src="/images/lai-weng-hong.png" alt="Lai Weng Hong — Software Engineer" className="w-full h-full object-cover " width={600} height={800} priority />
+              <Image src={assetUrl("/images/lai-weng-hong.png")} alt="Lai Weng Hong — Software Engineer" className="w-full h-full object-cover " width={600} height={800} priority />
             </div>
             <div className="absolute -bottom-6 left-0 font-dot-matrix text-[9px] uppercase tracking-[0.2em] text-black/30 dark:text-white/30">SYS.PROFILE_IMG</div>
             <div className="absolute -top-6 right-0 font-dot-matrix text-[9px] uppercase tracking-[0.2em] text-black/30 dark:text-white/30">V.2026</div>
