@@ -6,6 +6,7 @@ import { MoonIcon, SunIcon, HamburgerMenuIcon } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { assetUrl } from '@/lib/basePath';
 
 const TopNavBar = () => {
     const { setTheme, theme } = useTheme()
@@ -57,7 +58,7 @@ const TopNavBar = () => {
 
                     {/* Resume Download CTA */}
                     <a 
-                        href="/resume.pdf" 
+                        href={assetUrl("/resume.pdf")} 
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hidden md:block font-dot-matrix text-[10px] uppercase tracking-[0.2em] px-4 py-2 border border-black dark:border-white text-black dark:text-white hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-colors duration-200"
@@ -85,7 +86,7 @@ const TopNavBar = () => {
                                 ))}
                                 <DropdownMenuItem asChild className="rounded-none">
                                     <a 
-                                        href="/resume.pdf" 
+                                        href={assetUrl("/resume.pdf")} 
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="font-dot-matrix text-[11px] uppercase tracking-[0.2em] text-[#ff0000] cursor-pointer"
