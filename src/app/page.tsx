@@ -51,8 +51,8 @@ export default function Home() {
             <Link href="/experiences" className="font-dot-matrix text-[10px] uppercase tracking-[0.2em] px-6 py-3 border border-black dark:border-white text-black dark:text-white hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-colors duration-200">
               [ VIEW EXPERIENCE ]
             </Link>
-            <a href={assetUrl("/resume.pdf")} target="_blank" rel="noopener noreferrer" className="font-dot-matrix text-[10px] uppercase tracking-[0.2em] px-6 py-3 border border-black/20 dark:border-white/20 text-black/50 dark:text-white/50 hover:border-[#ff0000] hover:text-[#ff0000] transition-colors duration-200">
-              [ DOWNLOAD RESUME .PDF ]
+            <a href={assetUrl("/lai_weng_hong_cv.pdf")} target="_blank" rel="noopener noreferrer" className="font-dot-matrix text-[10px] uppercase tracking-[0.2em] px-6 py-3 border border-black/20 dark:border-white/20 text-black/50 dark:text-white/50 hover:border-[#ff0000] hover:text-[#ff0000] transition-colors duration-200">
+              [ DOWNLOAD CV .PDF ]
             </a>
           </div>
         </div>

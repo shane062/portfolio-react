@@ -432,8 +432,8 @@ export default function NeuralExperienceHub() {
                             <p className="text-xs text-black/60 dark:text-white/60 leading-relaxed mb-4 text-justify">
                                 Specializing in AWS Cloud Engineering and Event-Driven Architectures. Building high-throughput, scalable backend systems.
                             </p>
-                            <a href={assetUrl("/resume.pdf")} target="_blank" className="block w-full text-center font-dot-matrix text-[10px] uppercase tracking-widest border border-black dark:border-white text-black dark:text-white py-2 hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-colors">
-                                [ DOWNLOAD RESUME .PDF ]
+                            <a href={assetUrl("/lai_weng_hong_cv.pdf")} target="_blank" className="block w-full text-center font-dot-matrix text-[10px] uppercase tracking-widest border border-black dark:border-white text-black dark:text-white py-2 hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-colors">
+                                [ DOWNLOAD CV .PDF ]
                             </a>
                         </div>
                     </div>

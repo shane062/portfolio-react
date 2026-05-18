@@ -58,12 +58,12 @@ const TopNavBar = () => {
 
                     {/* Resume Download CTA */}
                     <a 
-                        href={assetUrl("/resume.pdf")} 
+                        href={assetUrl("/lai_weng_hong_cv.pdf")} 
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hidden md:block font-dot-matrix text-[10px] uppercase tracking-[0.2em] px-4 py-2 border border-black dark:border-white text-black dark:text-white hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-colors duration-200"
                     >
-                        [ RESUME .PDF ]
+                        [ CV .PDF ]
                     </a>
 
                     {/* Mobile Menu */}
@@ -86,7 +86,7 @@ const TopNavBar = () => {
                                 ))}
                                 <DropdownMenuItem asChild className="rounded-none">
                                     <a 
-                                        href={assetUrl("/resume.pdf")} 
+                                        href={assetUrl("/lai_weng_hong_cv.pdf")} 
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="font-dot-matrix text-[11px] uppercase tracking-[0.2em] text-[#ff0000] cursor-pointer"
