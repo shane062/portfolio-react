@@ -2,75 +2,77 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen pt-32 pb-20 px-8 max-w-7xl mx-auto flex flex-col justify-center">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        
-        {/* Left Side: Content */}
-        <div className="lg:col-span-6 space-y-12">
-          <h1 className="text-6xl md:text-7xl font-extrabold tracking-tighter leading-[1.1] text-foreground">
-            Hello, I'm <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-purple-600">
-              Lai Weng Hong.
-            </span>
-          </h1>
-          
-          <div className="space-y-8 max-w-xl">
-            <div className="flex items-start gap-5 group">
-              <div className="mt-1 flex-shrink-0 w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-teal-600 transition-colors group-hover:bg-teal-100 dark:group-hover:bg-teal-900/30">
-                <span className="material-symbols-outlined">settings</span>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold tracking-tight">Full-Stack Architect</h3>
-                <p className="text-muted-foreground leading-relaxed">Specializing in building robust, scalable applications using modern ecosystems like Next.js and high-performance backend patterns.</p>
-              </div>
-            </div>
+  const techStack = [
+    "AWS", "DYNAMODB", "DOCKER", "VUE.JS", "LARAVEL",
+    "EXPRESS.JS", "REACT"
+  ];
 
-            <div className="flex items-start gap-5 group">
-              <div className="mt-1 flex-shrink-0 w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-purple-600 transition-colors group-hover:bg-purple-100 dark:group-hover:bg-purple-900/30">
-                <span className="material-symbols-outlined">cloud</span>
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-lg font-bold tracking-tight">Cloud Infrastructure</h3>
-                <p className="text-muted-foreground leading-relaxed">Engineering cloud-native environments on AWS with Docker and Kubernetes for high availability and zero-downtime deployments.</p>
-              </div>
+  const stats = [
+    { value: "2+", label: "YEARS EXP" },
+    { value: "2", label: "COMPANIES" },
+    { value: "5+", label: "PROJECTS" },
+  ];
+
+  return (
+    <div className="min-h-screen pt-28 pb-20 px-8 max-w-7xl mx-auto flex flex-col justify-center">
+      <div className="fixed inset-0 noise-bg pointer-events-none z-0"></div>
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="lg:col-span-7 space-y-10">
+          <div className="animate-fade-up flex items-center gap-3">
+            <div className="w-2 h-2 bg-[#ff0000] pulse-dot"></div>
+            <span className="font-dot-matrix text-[10px] uppercase tracking-[0.3em] text-[#ff0000]">
+              OPEN TO OPPORTUNITIES
+            </span>
+          </div>
+          <div className="animate-fade-up-delay-1">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] text-black dark:text-white">
+              LAI<br />
+              <span className="text-[#ff0000]">WENG HONG</span>
+            </h1>
+          </div>
+          <div className="animate-fade-up-delay-2 space-y-4">
+            <div className="font-dot-matrix text-[11px] uppercase tracking-[0.3em] text-black/50 dark:text-white/50">
+              [ SOFTWARE ENGINEER ]
             </div>
+            <p className="text-sm md:text-base text-black/60 dark:text-white/60 text-justify leading-relaxed max-w-lg font-light">
+              Specializing in AWS Cloud Engineering and Event-Driven Architectures. Building high-throughput, scalable backend systems and modern frontend interfaces.
+            </p>
+          </div>
+          <div className="animate-fade-up-delay-3 flex gap-8 pt-2">
+            {stats.map((stat) => (
+              <div key={stat.label} className="flex flex-col">
+                <span className="text-3xl md:text-4xl font-extrabold tracking-tight text-black dark:text-white">{stat.value}</span>
+                <span className="font-dot-matrix text-[9px] uppercase tracking-[0.3em] text-black/40 dark:text-white/40 mt-1">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="animate-fade-up-delay-4 flex flex-wrap gap-4 pt-2">
+            <Link href="/experiences" className="font-dot-matrix text-[10px] uppercase tracking-[0.2em] px-6 py-3 border border-black dark:border-white text-black dark:text-white hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-colors duration-200">
+              [ VIEW EXPERIENCE ]
+            </Link>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="font-dot-matrix text-[10px] uppercase tracking-[0.2em] px-6 py-3 border border-black/20 dark:border-white/20 text-black/50 dark:text-white/50 hover:border-[#ff0000] hover:text-[#ff0000] transition-colors duration-200">
+              [ DOWNLOAD RESUME .PDF ]
+            </a>
           </div>
         </div>
-
-        {/* Right Side: Portrait & Floating Icons */}
-        <div className="lg:col-span-6 relative flex justify-center items-center">
-          <div className="relative z-10 w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden glow-frame border-[8px] border-white dark:border-slate-900">
-            <Image
-              src="/images/lai-weng-hong.png" // Ensure this image path is correct in your public folder
-              alt="Lai Weng Hong Professional Portrait"
-              className="w-full h-full object-cover"
-              width={600}
-              height={800}
-              priority
-            />
-          </div>
-
-          {/* Floating Elements */}
-          <div className="absolute inset-0 z-20 pointer-events-none hidden md:block">
-            {/* Next.js */}
-            <div className="absolute top-[10%] left-[5%] backdrop-blur-xl bg-white/80 dark:bg-slate-800/80 p-4 rounded-2xl shadow-xl flex flex-col items-center gap-1 border border-slate-200 dark:border-slate-700">
-              <span className="text-xs font-bold tracking-widest text-slate-500 uppercase">Frontend</span>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-teal-500"></div>
-                <span className="font-bold text-sm">Next.js</span>
-              </div>
+        <div className="lg:col-span-5 relative flex justify-center items-center">
+          <div className="relative w-full max-w-sm animate-fade-up-delay-2">
+            <div className="relative aspect-[4/5] border border-black dark:border-white overflow-hidden scanlines">
+              <Image src="/images/lai-weng-hong.png" alt="Lai Weng Hong — Software Engineer" className="w-full h-full object-cover " width={600} height={800} priority />
             </div>
-            
-            {/* Docker */}
-            <div className="absolute bottom-[25%] right-[5%] backdrop-blur-xl bg-white/80 dark:bg-slate-800/80 p-4 rounded-2xl shadow-xl flex flex-col items-center gap-1 border border-slate-200 dark:border-slate-700">
-              <span className="text-xs font-bold tracking-widest text-slate-500 uppercase">DevOps</span>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                <span className="font-bold text-sm">Docker</span>
-              </div>
-            </div>
+            <div className="absolute -bottom-6 left-0 font-dot-matrix text-[9px] uppercase tracking-[0.2em] text-black/30 dark:text-white/30">SYS.PROFILE_IMG</div>
+            <div className="absolute -top-6 right-0 font-dot-matrix text-[9px] uppercase tracking-[0.2em] text-black/30 dark:text-white/30">V.2026</div>
           </div>
+        </div>
+      </div>
+      <div className="relative z-10 mt-20 pt-8 border-t border-black/10 dark:border-white/10 animate-fade-up-delay-4">
+        <div className="font-dot-matrix text-[9px] uppercase tracking-[0.3em] text-black/30 dark:text-white/30 mb-4">CORE.TECH_STACK</div>
+        <div className="flex flex-wrap gap-2">
+          {techStack.map((tech) => (
+            <span key={tech} className="font-dot-matrix text-[9px] uppercase tracking-[0.2em] px-3 py-1.5 border border-black/15 dark:border-white/15 text-black/50 dark:text-white/50 hover:border-[#ff0000] hover:text-[#ff0000] transition-colors duration-200 cursor-default">
+              {tech}
+            </span>
+          ))}
         </div>
       </div>
     </div>

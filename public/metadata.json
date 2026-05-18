@@ -116,50 +116,69 @@
     ],
     "experiences": [
         {
-            "time": "September 2024 - present",
-            "company": "Appsploration Sdn Bhd",
-            "title": "Software Engineer I",
-            "content": "Focused on AWS Cloud Engineering for RewardFX, a rewarding system built entirely on AWS. Managed Event-Driven Architecture (EDA) using a range of AWS services, including Lambda, DynamoDB (DDB), API Gateway, RDS, EventBridge, Scheduler, AWS SAM, and LocalStack. Utilized Docker for containerization to streamline development and deployment processes.",
-            "image": "/images/experiences/2.jpg",
+            "time": "Jan 2026 - Present",
+            "company": "Appsploration Sdn Bhd (Subsidiary of Innity)",
+            "title": "Software Engineer II",
+            "content": "[ MomentsAI ] End-to-End Ownership: Only developer responsible for the full lifecycle of the platform, moving from a local CLI tool to a production-ready AI video service.\nInfrastructure Migration: Independently transitioned AI inference workloads from local CPU environments to Akamai Linode GPU nodes (CUDA), enabling high-concurrency video processing for viral content generation.\nAI Pipeline Engineering: Developed a unified \"speech-to-face\" synchronization pipeline by orchestrating Whisper-1, Pyannote, and Buffalo_L for automated diarization and face recognition.\nQueue Management: Used BullMQ and Redis to handle asynchronous video rendering, preventing system timeouts during heavy media processing.",
+            "logo": "/images/experiences/appsploration_logo.png",
             "tech_badge": [
+                "Akamai Linode (CUDA)",
                 "Node.js",
+                "BullMQ",
+                "Redis",
+                "Docker"
+            ]
+        },
+        {
+            "time": "Sept 2024 - Dec 2025",
+            "company": "Appsploration Sdn Bhd (Subsidiary of Innity)",
+            "title": "Software Engineer I",
+            "content": "[ RewardsFX ] Sole Backend Architect: Owned the full implementation of the RewardsFX backend, refining an initial roadmap into a high-scale reactive loop using DynamoDB Streams.\nReactive Loop Design: Refined the initial project roadmap into a fully decoupled system using EventBridge → Lambda → DynamoDB Streams. This allows 12+ services to react to data changes without blocking each other.\nCost Optimization: Reduced AWS costs and latency by connecting API Gateway directly to EventBridge, cutting out unnecessary Lambda executions for event routing.\nIdempotency & Data Integrity: Developed a reusable Lambda Layer for distributed idempotency, guaranteeing 100% transaction accuracy across multiple reward types and ledger systems.\nDB Performance: Optimized DynamoDB using GSI/LSI indexes, eliminating table scans and achieving sub-second response times for high-traffic lookups.\nCollaboration: Led technical discussions with other department leads to align the backend architecture with business requirements.",
+            "logo": "/images/experiences/appsploration_logo.png",
+            "tech_badge": [
+                "AWS EventBridge",
                 "AWS Lambda",
-                "DynamoDB",
-                "RDS",
-                "API Gateway",
-                "EventBridge",
-                "Scheduler",
-                "AWS SAM",
-                "LocalStack",
-                "Docker",
-                "Event-Driven Architecture"
+                "AWS DynamoDB",
+                "AWS API Gateway",
+                "AWS SAM"
             ]
         },
         {
-            "time": "August - October 2023",
-            "company": "Datasonic Smart Solution Sdn Bhd",
-            "title": "Software Engineer",
-            "content": "Worked part-time and remotely on the development of the PERKESO (Pertubuhan Keselamatan Sosial) ARTs (Automatic Reporting Tools) platform. Contributed to the user management and automation reporting modules of the platform.",
+            "time": "Sept 2024 - Dec 2025",
+            "company": "Appsploration Sdn Bhd (Subsidiary of Innity)",
+            "title": "Software Engineer I",
+            "content": "[ Fusion Studio ] Asset Automation: Extended the Laravel backend to support Adobe Animate assets; wrote logic to automate ZIP parsing and tracking script injection.\nInteractive Formats: Built and deployed interactive ad templates using Inertia.js and Vue 3.",
+            "logo": "/images/experiences/appsploration_logo.png",
             "tech_badge": [
-                "Quasar Framework",
-                "Typescript",
-                ".NET Core",
-                "C#",
-                "MySQL"
+                "Laravel",
+                "Vue.js 3",
+                "Inertia.js",
+                "Node.js"
             ]
         },
         {
-            "time": "February - August 2023",
-            "company": "Datasonic Smart Solution Sdn Bhd",
-            "title": "Software Engineer Intern",
-            "content": "Worked on Immigration Department of Malaysia (Jabatan Imigresen Malaysia)'s i-KAD project, focusing on the development of both frontend and backend components of the i-KAD Printing Management System, i-KAD Issuance, and i-KAD Renewal.",
-            "image": "/images/experiences/1.jpg",
+            "time": "Feb 2023 - Oct 2023",
+            "company": "Datasonic Smart Solutions Sdn Bhd (Subsidiary of NexG)",
+            "title": "Software Engineer (Part-Time & Intern)",
+            "content": "[ PERKESO ARTs ] Project Kick-off (PERKESO): Started the development of the ARTs platform from scratch, setting up the initial .NET Core project structure and backend logic.\nSecurity & Auth: Built the login system using JWT and a Singleton-pattern OTP engine to manage secure, consistent token generation.\nFull-Stack Development: Translated Figma designs into responsive components using Quasar (Vue.js) and integrated them with .NET Core APIs.\nConsultation: Participated in design sessions with the Lead Engineer and external developers to finalize API specs and security standards.",
+            "logo": "/images/experiences/datasonic_logo.png",
             "tech_badge": [
-                "Quasar Framework",
-                "Typescript",
                 ".NET Core",
-                "C#",
-                "MySQL"
+                "Quasar Framework",
+                "Vue.js 3",
+                "C#"
+            ]
+        },
+        {
+            "time": "Feb 2023 - Oct 2023",
+            "company": "Datasonic Smart Solutions Sdn Bhd (Subsidiary of NexG)",
+            "title": "Software Engineer (Part-Time & Intern)",
+            "content": "[ i-KAD ] Database Management: Managed schemas and wrote optimized queries in MySQL to handle large-scale government records for the i-KAD system.",
+            "logo": "/images/experiences/datasonic_logo.png",
+            "tech_badge": [
+                "MySQL",
+                ".NET Core",
+                "C#"
             ]
         }
     ],

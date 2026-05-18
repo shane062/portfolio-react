@@ -1,66 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/* Fonts loaded via next/font in layout.tsx for optimal performance.
+   Material Symbols loaded via CSS since next/font doesn't support icon fonts. */
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════════════════════
+   NOTHING DESIGN SYSTEM — CSS Custom Properties
+   High-contrast monochrome with #ff0000 accent
+   ═══════════════════════════════════════════════════════ */
+
 @layer base {
   :root {
-    --background: 250 100% 98%; /* #faf8ff */
-    --foreground: 222 41% 12%; /* #131b2e */
-    
-    --card: 0 0% 100%;
-    --card-foreground: 222 41% 12%;
-    
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 41% 12%;
-    
-    --primary: 173 100% 21%; /* #006b5f */
-    --primary-foreground: 0 0% 100%;
-    
-    --primary-container: 172 66% 50%; /* #2dd4bf */
-    --on-primary-container: 173 100% 17%; /* #00574d */
-    
-    --secondary: 272 68% 48%; /* #8127cf */
-    --secondary-foreground: 0 0% 100%;
-    
-    --secondary-container: 271 78% 60%; /* #9c48ea */
-    
-    --tertiary: 48 100% 22%; /* #735c00 */
-    --tertiary-foreground: 0 0% 100%;
+    /* Light Mode — Slightly off-white to reduce eye strain */
+    --background: 0 0% 98%;        /* #fafafa */
+    --foreground: 0 0% 0%;          /* #000000 */
 
-    --surface-container-low: 236 100% 97%; /* #f2f3ff */
-    --surface-container-lowest: 0 0% 100%;
-    
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    
-    --border: 154 8% 65%; /* #bacac5 */
-    --input: 154 8% 65%;
-    --ring: 173 100% 21%;
-    
-    --radius: 0.5rem;
+    --card: 0 0% 96%;               /* #f5f5f5 */
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;             /* Black */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;          /* #f5f5f5 */
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 93%;              /* #ededed */
+    --muted-foreground: 0 0% 40%;   /* #666666 */
+
+    --accent: 0 100% 50%;           /* #ff0000 */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 0%;              /* Black borders in light mode */
+    --input: 0 0% 85%;
+    --ring: 0 0% 0%;
+
+    --radius: 0px;                  /* Nothing = no border radius */
+
+    /* Nothing-specific tokens */
+    --nothing-surface: #fafafa;
+    --nothing-surface-elevated: #f5f5f5;
+    --nothing-text-primary: #000000;
+    --nothing-text-secondary: #666666;
+    --nothing-border: #000000;
+    --nothing-border-subtle: rgba(0, 0, 0, 0.15);
+    --nothing-red: #ff0000;
+    --nothing-tooltip-bg: #ffffff;
+    --nothing-tooltip-border: #000000;
+    --nothing-glass-bg: rgba(255, 255, 255, 0.85);
+    --nothing-noise-opacity: 0.03;
+    --nothing-dim: rgba(0, 0, 0, 0.6);
   }
 
   .dark {
-    /* Neural Hub Dark Theme */
-    --background: 222 41% 12%; /* #131b2e */
-    --foreground: 0 0% 100%;
-    
-    --card: 222 41% 12%;
+    /* Dark Mode — Deep Black Surface */
+    --background: 0 0% 2%;          /* #050505 */
+    --foreground: 0 0% 100%;        /* #ffffff */
+
+    --card: 0 0% 5%;                /* #0d0d0d */
     --card-foreground: 0 0% 100%;
-    
-    --primary: 172 96% 68%; /* #62fae3 */
-    --primary-foreground: 173 100% 6%; /* #00201c */
-    
-    --secondary: 271 100% 86%; /* #ddb7ff */
-    --surface-container-low: 226 42% 20%;
-    
-    --border: 226 42% 20%;
+
+    --popover: 0 0% 2%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;           /* White */
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 8%;           /* #141414 */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 12%;              /* #1f1f1f */
+    --muted-foreground: 0 0% 60%;   /* #999999 */
+
+    --accent: 0 100% 50%;           /* #ff0000 */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100%;            /* White borders in dark mode */
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
+
+    /* Nothing-specific tokens — dark */
+    --nothing-surface: #050505;
+    --nothing-surface-elevated: #0d0d0d;
+    --nothing-text-primary: #ffffff;
+    --nothing-text-secondary: #999999;
+    --nothing-border: #ffffff;
+    --nothing-border-subtle: rgba(255, 255, 255, 0.15);
+    --nothing-red: #ff0000;
+    --nothing-tooltip-bg: #000000;
+    --nothing-tooltip-border: #ffffff;
+    --nothing-glass-bg: rgba(5, 5, 5, 0.85);
+    --nothing-noise-opacity: 0.04;
+    --nothing-dim: rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -69,30 +110,107 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
   }
 }
 
-/* Custom Utilities for the new UI */
+/* ═══════════════════════════════════════════════════════
+   NOTHING DESIGN SYSTEM — Utility Classes
+   ═══════════════════════════════════════════════════════ */
+
+/* Dot-Matrix Monospace Font */
+.font-dot-matrix {
+  font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+}
+
+/* Material Symbols */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-.glow-frame {
-  box-shadow: 0 0 40px 10px rgba(45, 212, 191, 0.15), 0 0 60px 20px rgba(129, 39, 207, 0.1);
+/* Nothing Tooltip — sharp corners, 1px border */
+.nothing-tooltip {
+  background: var(--nothing-tooltip-bg);
+  border: 1px solid var(--nothing-tooltip-border);
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.tech-line {
-  background: linear-gradient(to bottom right, rgba(45, 212, 191, 0.4), rgba(129, 39, 207, 0.4));
-}
-
-.neural-background {
-  background: radial-gradient(circle at 50% 50%, #1a2236 0%, #0d121f 100%);
-}
-
-.glass-panel {
-  background: rgba(255, 255, 255, 0.03);
+/* Glass Pill — semi-transparent with blur */
+.glass-pill {
+  background: var(--nothing-glass-bg);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Node transition — smooth opacity and border changes */
+.node-transition {
+  transition: opacity 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Static Noise Texture Overlay */
+.noise-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Pulsing availability indicator */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Subtle entrance animation */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.6s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-4 {
+  animation: fade-up 0.6s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* Scanline overlay for images */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
 }

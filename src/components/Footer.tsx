@@ -1,89 +1,52 @@
-import { Separator } from "@/components/ui/separator"
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
+"use client";
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip"
 import { siteConfig } from '@/config/profile';
 
 export function Footer() {
-    const currentYear = new Date().getFullYear();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const currentYear = mounted ? new Date().getFullYear() : '2026';
+
+    const socialLinks = [
+        { name: 'GITHUB', href: siteConfig.links.github },
+        { name: 'LINKEDIN', href: siteConfig.links.linkedin },
+        { name: 'EMAIL', href: siteConfig.links.mail },
+    ];
 
     return (
-        <div>
-            <footer className="py-6 md:py-0">
-                <Separator />
-                <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-                    <div className="flex flex-col">
-                        <p className="text-balance text-center text-xs md:text-sm leading-loose text-muted-foreground md:text-left">
-                            © {currentYear} {siteConfig.author}. All rights reserved.
-                        </p>
-                        <p className="text-balance text-center md:text-[10px] text-[0px] leading-loose text-muted-foreground md:text-left">
-                            This portfolio is built with React, Next.js, shadcn/ui, MUI, and Tailwind CSS.
-                        </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <TooltipProvider>
-                            <Tooltip>
-                                <TooltipTrigger>
-                                    <Link
-                                        href={siteConfig.links.github}
-                                        className="text-muted-foreground transition-colors hover:text-foreground"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <GitHubIcon />
-                                    </Link>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p>Github</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-
-                        <TooltipProvider>
-                            <Tooltip>
-                                <TooltipTrigger>
-                                    <Link
-                                        href={siteConfig.links.linkedin}
-                                        className="text-muted-foreground transition-colors hover:text-foreground"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <LinkedInIcon />
-                                    </Link>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p>LinkedIn</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-
-                        <TooltipProvider>
-                            <Tooltip>
-                                <TooltipTrigger>
-                                    <Link
-                                        href={siteConfig.links.mail}
-                                        className="text-muted-foreground transition-colors hover:text-foreground"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <EmailIcon />
-                                    </Link>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p>Mail</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-                    </div>
+        <footer className="border-t border-black/10 dark:border-white/10">
+            <div className="max-w-7xl mx-auto px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                {/* Left — Attribution */}
+                <div className="flex flex-col items-center md:items-start gap-1">
+                    <p className="font-dot-matrix text-[10px] uppercase tracking-[0.2em] text-black/40 dark:text-white/40">
+                        © {currentYear} {siteConfig.author}
+                    </p>
+                    <p className="font-dot-matrix text-[9px] uppercase tracking-[0.15em] text-black/25 dark:text-white/25">
+                        [ NEXT.JS • REACT • TAILWIND ]
+                    </p>
                 </div>
-            </footer>
-        </div>
+
+                {/* Right — Social Links */}
+                <div className="flex items-center gap-4">
+                    {socialLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className="font-dot-matrix text-[10px] uppercase tracking-[0.2em] text-black/40 dark:text-white/40 hover:text-[#ff0000] transition-colors duration-200 border-b border-transparent hover:border-[#ff0000]"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            [ {link.name} ]
+                        </Link>
+                    ))}
+                </div>
+            </div>
+        </footer>
     )
 }
