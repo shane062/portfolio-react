@@ -2,8 +2,7 @@
 import * as React from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image";
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import FiberManualRecordOutlinedIcon from '@mui/icons-material/FiberManualRecordOutlined';
+import { Circle } from "lucide-react"
 import Autoplay from "embla-carousel-autoplay"
 import {
     Carousel,
@@ -62,15 +61,15 @@ export function AchievementCarousel({ title, content, images, isRecognition, rec
                     ))}
                 </CarouselContent>
             </Carousel>
-            <div className="absolute inset-x-0 bottom-0 flex justify-center align-center mb-4">
+             <div className="absolute inset-x-0 bottom-0 flex justify-center items-center gap-1 mb-4">
                 {images.map((_, index) => (
-                    <>
+                    <React.Fragment key={index}>
                         {index === current ? (
-                            <FiberManualRecordIcon className="{w-3 h-3 rounded-full " />
+                            <Circle className="w-2 h-2 rounded-full fill-black dark:fill-white text-black dark:text-white" />
                         ) : (
-                            <FiberManualRecordOutlinedIcon className="{w-3 h-3 rounded-full " />
+                            <Circle className="w-2 h-2 rounded-full text-black/30 dark:text-white/30" />
                         )}
-                    </>
+                    </React.Fragment>
                 ))}
             </div>
         </div>
