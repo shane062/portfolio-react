@@ -1,7 +1,7 @@
 /**
  * Base path utility for GitHub Pages deployment.
  *
- * In production, NEXT_PUBLIC_BASE_PATH is set to "/portfolio-react"
+ * In production, NEXT_PUBLIC_BASE_PATH is set to "/"
  * so all asset URLs resolve correctly under the subpath.
  * In development, it defaults to "" (root).
  *
