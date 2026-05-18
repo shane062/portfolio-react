@@ -91,7 +91,7 @@ const TopNavBar = () => {
                                         rel="noopener noreferrer"
                                         className="font-dot-matrix text-[11px] uppercase tracking-[0.2em] text-[#ff0000] cursor-pointer"
                                     >
-                                        [ RESUME .PDF ]
+                                        [ CV .PDF ]
                                     </a>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>

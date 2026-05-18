@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image";
 import { Circle } from "lucide-react"
 import Autoplay from "embla-carousel-autoplay"
+import { assetUrl } from "@/lib/basePath";
 import {
     Carousel,
     CarouselContent,
@@ -45,7 +46,7 @@ export function AchievementCarousel({ title, content, images, isRecognition, rec
                                     <CardContent className="flex aspect-square items-center justify-center p-6">
                                         <div className="w-full h-full max-w-80 max-h-80">
                                             <Image
-                                                src={image}
+                                                src={assetUrl(image)}
                                                 className="object-contain w-full h-full"
                                                 alt={`Achievement image ${index + 1}`}
                                                 width={500}
